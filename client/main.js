@@ -22,4 +22,4 @@ Template.hello.events({
   },
 });
 
-console.log(HTTP.call('GET', 'https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json'));
+console.log(Meteor.isClient);

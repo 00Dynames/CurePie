@@ -9,3 +9,6 @@ $ meteor
 Packages 
 ========
 
+API Keys
+=========
+GMaps -> AIzaSyDxI0mCeLq2o0YTatFKIRY2IE9n9ttuQOo
