@@ -8,6 +8,8 @@ $ meteor
 
 Packages 
 ========
+meteor npm install --save react-router history
+meteor npm install --save react-mounter
 
 API Keys
 =========
