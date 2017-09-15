@@ -13,5 +13,5 @@ Meteor.startup(() => {
     
     render(<Navbar />, document.getElementById('navbar-target'));
     render(<Main />, document.getElementById('home-target'));
-    
+   
 });
