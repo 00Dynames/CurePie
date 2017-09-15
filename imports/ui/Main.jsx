@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 
 import Home from './Home.jsx';
+import Map from './Map.jsx';
+import List from './List.jsx';
 
 export default class Main extends Component{
 
@@ -13,12 +15,15 @@ export default class Main extends Component{
     whichPage = (props) => {
         
         if(this.state.page == "Map"){
-            return "Map";
-        } 
+            return <Map switchToHome={this.switchToHome.bind(this)} switchToList={this.switchToList.bind(this)} />
+        } else if (this.state.page == "List"){
+            return <List switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} />
+        }
 
-        return <Home switchToMap={this.switchToMap.bind(this)} />;
+        return <Home switchToMap={this.switchToMap.bind(this)} switchToList={this.switchToList.bind(this)}/>;
     }
 
+    // Component switching functions
     switchToHome = () => {
         this.setState({page: "Home"});
     }
@@ -26,6 +31,10 @@ export default class Main extends Component{
     switchToMap = () => {
         this.setState({page: "Map"});
     }
+
+    switchToList = () => {
+        this.setState({page: "List"});
+    }   
 
     render (){
         console.log(this.state);

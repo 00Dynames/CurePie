@@ -4,7 +4,9 @@ export default class List extends Component{
 
     render(){
         return(
-            List page
+            <div>
+                List page
+            </div>
         );
     }
 }

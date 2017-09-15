@@ -18,7 +18,7 @@ export default class Home extends Component{
         return(
             <div>
                 <button type="button" onClick={this.props.switchToMap}>Map</button>
-                <button type="button">List</button>
+                <button type="button" onClick={this.props.switchToList}>List</button>
             </div>
         )
     }
