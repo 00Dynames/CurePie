@@ -1,4 +1,4 @@
-# QT3.14
+: QT3.14
 
 // '$' indicates your cli prompt
 
