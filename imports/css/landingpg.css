@@ -14,6 +14,13 @@ body, p {
 	font-size: 2.5em;
 	text-align: center;
 }
+.text-container {
+	margin-top:6%;
+	margin-bottom:6%;
+}
+
+
+/*SPECIFIC*/
 .title-bg {
 	background-image: url('/images/open_screen.jpg');
 	height:100vh;
@@ -46,8 +53,10 @@ body, p {
 	align-items:center;
 	justify-content: center;
 }
-
-.text-container {
-	margin-top:6%;
-	margin-bottom:6%;
-}
+	.btn {
+		background-color: grey;
+		margin: 12px;
+	}
+		.btn :hover {
+			background-color: #FDD835 !important;
+		}
