@@ -6,6 +6,7 @@ import { render } from 'react-dom';
 import Home from '../../ui/Home.jsx';
 import Navbar from '../../ui/Navbar.jsx';
 import Map from '../../ui/Map.jsx';
+import Landing from '../../ui/landingpg.jsx'
 
 FlowRouter.route("/", {
     name: "Home",
@@ -20,4 +21,3 @@ FlowRouter.route("/map", {
         mount(Map, {main: <Map />});
     }
 });
-

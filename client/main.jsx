@@ -8,13 +8,10 @@ import Home from '../imports/ui/Home.jsx';
 import Navbar from '../imports/ui/Navbar.jsx';
 import Map from '../imports/ui/Map.jsx';
 import Main from '../imports/ui/Main.jsx';
-import Home from '../imports/ui/landingpg.jsx';
-
+import Landing from '../imports/ui/landingpg.jsx'
 
 
 
 Meteor.startup(() => {
-    render(<Navbar />, document.getElementById('navbar-target'));
-    render(<Main />, document.getElementById('home-target'));
-    render(<Home />, document.getElementById('open_screen'));
+    render(<Landing />, document.getElementById('landing-target'));
 });

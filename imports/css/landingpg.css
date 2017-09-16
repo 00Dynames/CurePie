@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Cantarell|Fjalla+One');
+
+body, p {
+	margin:0;
+	padding:0;
+	font-family: 'Cantarell';
+	line-height:1.5em;
+	margin: 3% 10%;
+	text-align:center;
+}
+.headings {
+	font-family: 'Fjalla One';
+	text-transform: uppercase;
+	font-size: 2.5em;
+	text-align: center;
+}
+.title-bg {
+	background-image: url('/images/open_screen.jpg');
+	height:100vh;
+	width:auto;
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+.title-text {
+	font-size:4em;
+	color:white;
+	padding-top: 15%;
+}
+#search-bar-container {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin-top:35px;
+}
+	.search-bar {
+		align-self:center;
+		margin:0 auto;
+	}
+		.search-bar > div {
+			color:gray !important;
+		}
+
+#btn-container {
+	display:flex;
+	margin: 0 auto;
+	align-items:center;
+	justify-content: center;
+}
+
+.text-container {
+	margin-top:6%;
+	margin-bottom:6%;
+}

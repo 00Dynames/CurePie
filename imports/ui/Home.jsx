@@ -1,15 +1,15 @@
 import React, { Component, PropTypes } from 'react';
-import { redierct } from 'meteor/kadira:flow-router';
+import { redirect } from 'meteor/kadira:flow-router';
 
 export default class Home extends Component{
 
     constructor(props){
         super(props);
-        
+
     }
 
     loadPage = () => {
-        //redirect("/");    
+        //redirect("/");
         console.log("MAP");
     }
 
@@ -23,5 +23,3 @@ export default class Home extends Component{
         )
     }
 }
-
-
