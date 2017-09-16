@@ -1,0 +1,13 @@
+.body {
+	margin:0;
+	padding:0;
+}
+.bg {
+	background-image: url('open_screen.jpg');
+	height:100vh;
+	width:auto;
+	background-size:cover;
+	background-repeat:no-repeat;
+	margin:0;
+	padding:0;
+}
