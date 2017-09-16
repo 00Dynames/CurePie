@@ -1,26 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Cantarell|Fjalla+One');
 
+/*GENERAL STYLING*/
 body, p {
-	margin:0;
-	padding:0;
 	font-family: 'Cantarell';
 	line-height:1.5em;
 	margin: 3% 10%;
 	text-align:center;
 }
 .headings {
-	font-family: 'Fjalla One';
 	text-transform: uppercase;
 	font-size: 2.5em;
 	text-align: center;
+	padding-top:35px;
 }
 .text-container {
-	margin-top:6%;
-	margin-bottom:6%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin-top:35px;
+	margin-bottom:35px;
+}
+
+.font1 {
+	font-family: 'Fjalla One';
+}
+
+.font2 {
+	font-family: 'Cantarell';
 }
 
 
-/*SPECIFIC*/
+
+/*COMPONENT SPECIFIC STYLING*/
 .title-bg {
 	background-image: url('/images/open_screen.jpg');
 	height:100vh;
@@ -31,7 +42,7 @@ body, p {
 .title-text {
 	font-size:4em;
 	color:white;
-	padding-top: 15%;
+	padding-top: 35vh;
 }
 #search-bar-container {
 	display:flex;
@@ -60,3 +71,69 @@ body, p {
 		.btn :hover {
 			background-color: #FDD835 !important;
 		}
+
+
+#slogan-container {
+	background-image: url('/images/charity.jpg');
+	background-size:cover;
+	background-repeat:no-repeat;
+	color:white;
+	font-size:3em;
+}
+#slogan {
+	font-size:3em;
+	line-height:1.5em;
+	display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+	background-color:#FBC02D;
+	font-family: 'Fjalla One';
+	color:white;
+	text-transform:uppercase;
+
+}
+.container {
+  margin: 0 auto;
+  padding: 40px;
+  width: 80%;
+  color: #333;
+  background: #419be0;
+}
+.filler-item {
+	height:70vh;
+	width:50vw;
+	align-self:center;
+	margin: 0 auto;
+}
+#filler-container {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+.green-line {
+	height:8px;
+	width:100%;
+	background-color:#00897B;
+}
+#footer-container {
+	height:200px;
+	width:100%;
+	background-color:#212121;
+}
+
+#team-container {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+	.team-item {
+	align-self:center;
+	margin: 40px 30px 30px 30px;
+	}
+	.team-img {
+	height:200px;
+	width:150px;
+	object-fit:cover;
+
+}
