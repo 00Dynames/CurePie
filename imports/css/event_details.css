@@ -1,0 +1,58 @@
+.title-text {
+  font-size: 3em;
+  color:black;
+  padding-top: 5%;
+}
+.headings {
+	font-family: 'Fjalla One';
+	text-transform: uppercase;
+	font-size: 2.5em;
+	text-align: center;
+}
+.subtitle {
+  font-size: 1.5em;
+  color:black;
+  padding-top: 5%;
+  padding-bottom: 2%
+}
+h1 {
+  font-family: 'Fjalla One';
+  font-size: 1em;
+  text-transform: uppercase;
+  text-align: left;
+  padding-left: 5%;
+  padding-bottom:5%;
+}
+#info-field-container {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin-top:35px;
+}
+.description {
+  align-self:center;
+  margin:0 auto;
+}
+  .description > div {
+    color:gray !important;
+  }
+.panel-container {
+  width: 300px;
+  height: 600px;
+  border: 25px green;
+  padding-top: 0%;
+  position: relative;
+  top: 0px;
+  margin: 25px;
+  background-color: lightgrey;
+}
+.panel-image {
+  width: 250px;
+  height:200px;
+  background-image: url('/images/open_screen.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  left: 20px;
+  padding-bottom: 5%;
+}
