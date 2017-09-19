@@ -45,11 +45,13 @@ class Open extends Component {
 								<RaisedButton
 									icon={<test />}
 									className="btn"
-									label="View Events"
+                                    label="View Events"
+                                    onClick={this.props.switchToList}
 								/>
 							<RaisedButton
 									className="btn"
-									label="View as Map"
+                                    label="View as Map"
+                                    onClick={this.props.switchToMap}
 								/>
 								</div>
 							</MuiThemeProvider>
@@ -84,7 +86,7 @@ class Exp extends Component {
 	render() {
 		return (
 			<div>
-				<Open />
+				<Open switchToMap={this.props.switchToMap.bind(this)} switchToList={this.props.switchToList.bind(this)} />
 				<About />
 				<Break />
 			</div>
