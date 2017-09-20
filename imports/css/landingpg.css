@@ -40,9 +40,9 @@ body, p {
 	background-repeat:no-repeat;
 }
 .title-text {
-	font-size:4em;
-	color:white;
-	padding-top: 35vh;
+	font-size:4em !important;
+	color:white !important;
+	padding-top: 35vh !important;
 }
 #search-bar-container {
 	display:flex;
