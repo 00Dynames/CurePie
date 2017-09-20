@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import FaIconPack from 'react-icons/lib/fa'
-import test from 'react-icons/lib/fa/check';
-
 import {grey100, yellow700} from 'material-ui/styles/colors';
 
 // MATERIAL UI THINGS
@@ -100,7 +97,7 @@ class Team extends Component {
 					<div id='team-container'>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Mahika Suri</div></div>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Dennis Bunadi</div></div>
-						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Jin Jie Lee</div></div>
+						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Jacqueline Lee</div></div>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Vivian Dang</div></div>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Christine Bui</div></div>
 					</div>
