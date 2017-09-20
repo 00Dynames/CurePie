@@ -10,6 +10,8 @@ Packages
 ========
 meteor npm install --save react-router history
 meteor npm install --save react-mounter
+meteor npm install react-icons --save
+meteor npm install --save google-maps-react
 
 API Keys
 =========
