@@ -5,6 +5,7 @@ import MapContainer from './Map.jsx';
 import List from './List.jsx';
 import EventDeets from './event_details.jsx'
 import NavBar from './Navbar.jsx'
+import Listview from './Listview.jsx'
 
 export default class Main extends Component{
 
@@ -19,7 +20,7 @@ export default class Main extends Component{
         if(this.state.page == "Map"){
             return <MapContainer switchToHome={this.switchToHome.bind(this)} switchToList={this.switchToList.bind(this)} />
         } else if (this.state.page == "List"){
-            return <EventDeets switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} />
+            return <Listview switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} />
         }
 
         return <Exp switchToMap={this.switchToMap.bind(this)} switchToList={this.switchToList.bind(this)}/>;
