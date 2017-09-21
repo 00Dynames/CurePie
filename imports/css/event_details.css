@@ -1,7 +1,9 @@
-.title-text {
+.main-title {
+  font-family: 'Fjalla One';
+  text-transform: uppercase;
   font-size: 3em;
-  color:black;
-  padding-top: 5%;
+  text-align: center;
+  color: black;
 }
 .headings {
 	font-family: 'Fjalla One';
@@ -13,21 +15,50 @@
   font-size: 1.5em;
   color:black;
   padding-top: 5%;
-  padding-bottom: 2%
+  text-align: left;
+  padding-left: 10%;
+}
+.info-heading {
+  font-size: 1.5em;
+  color: #00897B;
+  font-family: 'Fjalla One';
+  text-transform: uppercase;
+  text-align: left;
+  padding-left: 10%;
+  padding-top: 3%;
+  padding-bottom: 0%;
+}
+#summary-table td {
+  font-size: 0.9em;
+  color: #00897B;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  text-align: left;
+  font-weight: bold;
 }
 h1 {
   font-family: 'Fjalla One';
   font-size: 1em;
   text-transform: uppercase;
+  font-weight: normal;
   text-align: left;
-  padding-left: 5%;
-  padding-bottom:5%;
+  padding-left: 10%;
+  padding-right: 2%;
+  padding-bottom:10%;
 }
-#info-field-container {
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	margin-top:35px;
+p {
+  padding-top: 0%;
+  text-align: left;
+}
+ul {
+  padding-left: 10%;
+}
+li {
+  text-align: left;
+}
+.event-description {
+  align-self: center;
+  padding: 2%;
 }
 .description {
   align-self:center;
@@ -36,23 +67,48 @@ h1 {
   .description > div {
     color:gray !important;
   }
+
+#details-container {
+  display: flex
+}
 .panel-container {
-  width: 300px;
-  height: 600px;
-  border: 25px green;
-  padding-top: 0%;
-  position: relative;
-  top: 0px;
+  width: 370px;
   margin: 25px;
-  background-color: lightgrey;
+  background-color: #dddddd;
 }
 .panel-image {
   width: 250px;
-  height:200px;
+  height:190px;
   background-image: url('/images/open_screen.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  left: 20px;
+  top: 10px;
+  left: 32px;
+  margin: 10px;
+}
+.info-block {
+  width: 70%;
   padding-bottom: 5%;
+}
+#Charities-table {
+  border:1px solid grey;
+  width: 80%;
+  position: relative;
+  left: 70px;
+  top: 10px;
+}
+#Charities-table
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+.green-line {
+	height:8px;
+	width:100%;
+	background-color:#00897B;
+}
+#footer-container {
+	height:200px;
+	width:100%;
+	background-color:#212121;
 }

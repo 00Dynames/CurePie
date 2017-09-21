@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import Exp from './landingpg.jsx';
 import MapContainer from './Map.jsx';
 import List from './List.jsx';
+import EventDeets from './event_details.jsx'
 
 export default class Main extends Component{
 
@@ -13,11 +14,11 @@ export default class Main extends Component{
 
 
     whichPage = (props) => {
-        
+
         if(this.state.page == "Map"){
             return <MapContainer switchToHome={this.switchToHome.bind(this)} switchToList={this.switchToList.bind(this)} />
         } else if (this.state.page == "List"){
-            return <List switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} />
+            return <EventDeets switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} />
         }
 
         return <Exp switchToMap={this.switchToMap.bind(this)} switchToList={this.switchToList.bind(this)}/>;
@@ -34,7 +35,7 @@ export default class Main extends Component{
 
     switchToList = () => {
         this.setState({page: "List"});
-    }   
+    }
 
     // Render component
     render (){
