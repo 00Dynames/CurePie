@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import FaIconPack from 'react-icons/lib/fa'
-import test from 'react-icons/lib/fa/check';
-
 import {grey100, yellow700} from 'material-ui/styles/colors';
+import SearchBar from 'material-ui-search-bar'
 
 // MATERIAL UI THINGS
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -31,13 +29,15 @@ class Open extends Component {
 					<div className="font1 headings title-text">The Bridge Project</div>
 						<div id="search-bar-container">
 							<MuiThemeProvider>
-								<TextField
-									className="search-bar"
-									ref='user'
-									hintText='Search'
-									underlineFocusStyle={styles.underlineStyle}
-									inputStyle={styles.inputStyle}
-								/>
+								<SearchBar
+									onChange={() => console.log('onChange')}
+									onRequestSearch={() => console.log('onRequestSearch')}
+									hintText="SEARCH"
+									style={{
+										margin: '0 auto',
+										maxWidth: 280,
+									}}
+									/>
 							</MuiThemeProvider>
 						</div>
 						<div id="btn-container">
@@ -100,7 +100,7 @@ class Team extends Component {
 					<div id='team-container'>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Mahika Suri</div></div>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Dennis Bunadi</div></div>
-						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Jin Jie Lee</div></div>
+						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Jacqueline Lee</div></div>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Vivian Dang</div></div>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Christine Bui</div></div>
 					</div>

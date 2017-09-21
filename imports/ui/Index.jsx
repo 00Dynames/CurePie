@@ -3,7 +3,11 @@ import React, { Component, PropTypes } from 'react';
 import Exp from './landingpg.jsx';
 import MapContainer from './Map.jsx';
 import List from './List.jsx';
+
 import EventDeets from './event_details.jsx';
+
+
+
 
 export default class Index extends Component{
 
@@ -14,7 +18,7 @@ export default class Index extends Component{
 
 
     whichPage = (props) => {
-        
+
         if(this.state.page == "Map"){
             return <MapContainer switchToHome={this.switchToHome.bind(this)} switchToList={this.switchToList.bind(this)} />
         } else if (this.state.page == "List"){
@@ -35,7 +39,7 @@ export default class Index extends Component{
 
     switchToList = () => {
         this.setState({page: "List"});
-    }   
+    }
 
     // Render component
     render (){
