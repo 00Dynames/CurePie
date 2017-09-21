@@ -12,6 +12,5 @@ import Main from '../imports/ui/Main.jsx';
 
 
 Meteor.startup(() => {
-    render(<Navbar />, document.getElementById('navbar-target'));
     render(<Main />, document.getElementById('main-target'));
 });

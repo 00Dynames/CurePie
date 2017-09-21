@@ -4,6 +4,7 @@ import Exp from './landingpg.jsx';
 import MapContainer from './Map.jsx';
 import List from './List.jsx';
 import EventDeets from './event_details.jsx'
+import NavBar from './Navbar.jsx'
 
 export default class Main extends Component{
 
@@ -42,6 +43,7 @@ export default class Main extends Component{
         console.log(this.state);
         return(
             <div>
+                <NavBar />
                 {this.whichPage()}
             </div>
         );
