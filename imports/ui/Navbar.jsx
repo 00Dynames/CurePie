@@ -1,25 +1,64 @@
 import React, { Component, PropTypes } from 'react';
 
-export default class Navbar extends Component{
+import AppBar from 'material-ui/AppBar';
+import * as Colors from 'material-ui/styles/colors';
+import IconButton from 'material-ui/IconButton';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import FlatButton from 'material-ui/FlatButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-    goHome = () => {
-        this.setState({page: 'Home'});
-    }
 
-    render(){
-        return(
-            <nav class="navbar navbar-default">
-                <div >
-                    <a href="#" class="brand-logo"
-                        onClick={this.goHome}
-                    >Logo</a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="sass.html">Sass</a></li>
-                        <li><a href="badges.html">Components</a></li>
-                        <li><a href="collapsible.html">JavaScript</a></li>
-                    </ul>
-                </div>
-            </nav>
-        )
-    }
+function handleTouchTap() {
+  alert('onClick triggered on the title component');
 }
+
+const styles = {
+  title: {
+    cursor: 'pointer',
+    float: 'left'
+  },
+};
+
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: Colors.grey900,
+  },
+});
+
+/**
+ * This example uses an [IconButton](/#/components/icon-button) on the left, has a clickable `title`
+ * through the `onClick` property, and a [FlatButton](/#/components/flat-button) on the right.
+ */
+
+
+class AppBarExampleIconButton extends Component {
+	render() {
+
+    const buttonStyle = {
+     backgroundColor: 'transparent',
+     color: 'white'
+    };
+
+    const rightButtons = (
+     <div>
+       <FlatButton label="List View" style={buttonStyle} onClick={this.props.switchToList} />
+       <FlatButton label="Map View" style={buttonStyle} onClick={this.props.switchToMap} />
+     </div>
+    );
+
+		return (
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <AppBar
+          title={<span style={styles.title}>The Curepie Project</span>}
+          onTitleTouchTap={this.props.switchToHome}
+          iconElementLeft={<div> </div>}
+          iconElementRight={rightButtons}
+        />
+      </MuiThemeProvider>
+    )
+
+  }
+}
+
+export default AppBarExampleIconButton;

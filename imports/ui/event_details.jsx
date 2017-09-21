@@ -59,6 +59,7 @@ class Info extends Popup {
     );
   }
 }
+
 class Summary extends Component {
   render() {
     return (
@@ -115,6 +116,7 @@ class Charities extends Component {
     )
   }
 }
+
 class Footer extends Component {
 	render() {
 		return (
@@ -147,7 +149,7 @@ class Main extends Component {
                     />
                 </MuiThemeProvider>
                 <Popup />
-                <Panel />
+                <Info />
                 {this.getEvents()}
                 <Footer />
             </div>

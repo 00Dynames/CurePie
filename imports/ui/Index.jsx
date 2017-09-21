@@ -3,11 +3,8 @@ import React, { Component, PropTypes } from 'react';
 import Exp from './landingpg.jsx';
 import MapContainer from './Map.jsx';
 import List from './List.jsx';
-
+import AppBarExampleIconButton from './Navbar.jsx'
 import EventDeets from './event_details.jsx';
-
-
-
 
 export default class Index extends Component{
 
@@ -46,6 +43,11 @@ export default class Index extends Component{
         console.log(this.state);
         return(
             <div>
+                <AppBarExampleIconButton 
+                    switchToHome={this.switchToHome.bind(this)} 
+                    switchToList={this.switchToList.bind(this)} 
+                    switchToMap={this.switchToMap.bind(this)} 
+                />
                 {this.whichPage()}
             </div>
         );
