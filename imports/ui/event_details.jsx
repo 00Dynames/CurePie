@@ -100,15 +100,15 @@ class Charities extends Component {
             <th>Role</th>
           </tr>
           <tr>
-            <td><a href="http://www.redcross.org.au/news/hurricane-irma-rips-through-the-caribbean.aspx">Red Cross</a></td>
+            <td><a href="http://www.redcross.org.au/news/hurricane-irma-rips-through-the-caribbean.aspx" target = "_blank">Red Cross</a></td>
             <td>First Aid, Shelter, Water</td>
           </tr>
           <tr>
-            <td><a href="https://www.oxfam.org.au/2017/09/hurricane-irma-oxfam-is-ready-to-save-lives/">Oxfam</a></td>
+            <td><a href="https://www.oxfam.org.au/2017/09/hurricane-irma-oxfam-is-ready-to-save-lives/" target = "_blank">Oxfam</a></td>
             <td>Assisting with Evacuations</td>
           </tr>
           <tr>
-            <td><a href="https://www.americares.org/en/newsroom/news/2017/0907-Irma/">Americares</a></td>
+            <td><a href="https://www.americares.org/en/newsroom/news/2017/0907-Irma/" target = "_blank">Americares</a></td>
             <td>Medicine, supplies and health services</td>
           </tr>
         </table>

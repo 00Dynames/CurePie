@@ -1,0 +1,27 @@
+#all-events {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.main-title {
+  font-family: 'Fjalla One';
+  text-transform: uppercase;
+  font-size: 2em;
+  text-align: center;
+  color: black;
+}
+.Event-box {
+  width: 70%;
+  background-color: #dddddd;
+  margin: 25px;
+  padding-left: 100px;
+}
+.Filters-panel {
+  width: 370 px;
+  background-color: grey;
+}
+.event-description {
+  align-self: center;
+  padding: 2%;
+}
