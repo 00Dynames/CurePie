@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -15,6 +15,8 @@ import {
 } from 'material-ui/Table';
 
 import '../css/event_details.css'
+import { Events } from '../api/events.js';
+import { createContainer } from 'meteor/react-meteor-data';
 
 const style = {
   margin: 12,
@@ -57,6 +59,7 @@ class Info extends Popup {
     );
   }
 }
+
 class Summary extends Component {
   render() {
     return (
@@ -113,6 +116,7 @@ class Charities extends Component {
     )
   }
 }
+
 class Footer extends Component {
 	render() {
 		return (
@@ -124,16 +128,43 @@ class Footer extends Component {
 		);
 	}
 }
+
 class Main extends Component {
-  render() {
-    return (
-      <div>
-        <Popup />
-        <Info />
-        <Footer />
-      </div>
-    )
-  }
+
+    getEvents = () => {
+        console.log("getto!");
+        for (i = 0; i < this.props.events.length; i ++){
+            console.log(this.props.events[i].name);
+        }
+    }
+    
+    render() {
+        return (
+            <div>
+                <MuiThemeProvider>
+                    <RaisedButton
+                        className="btn"
+                        label="Home"
+                        onClick={this.props.switchToHome}
+                    />
+                </MuiThemeProvider>
+                <Popup />
+                <Info />
+                {this.getEvents()}
+                <Footer />
+            </div>
+        )
+    }
 }
 
-export default Main;
+Main.propTypes = {
+    events: PropTypes.array.isRequired
+};
+
+export default createContainer(() => {
+    return {
+        events: Events.find({}).fetch(),
+    };
+}, Main);
+
+

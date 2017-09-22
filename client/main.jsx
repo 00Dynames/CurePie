@@ -3,14 +3,9 @@ import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
-import '../imports/startup/client/routes.jsx';
-import Home from '../imports/ui/Home.jsx';
-import Navbar from '../imports/ui/Navbar.jsx';
-import Map from '../imports/ui/Map.jsx';
-import Main from '../imports/ui/Main.jsx';
-//import RaisedButtonExampleSimple from '../imports/ui/sample.jsx';
+import Index from '../imports/ui/Index.jsx';
 
 
 Meteor.startup(() => {
-    render(<Main />, document.getElementById('main-target'));
+    render(<Index />, document.getElementById('index-target'));
 });
