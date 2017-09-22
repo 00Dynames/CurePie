@@ -67,10 +67,12 @@ class Open extends Component {
 class About extends Component {
 	render() {
 		return (
-			<div className='text-container'>
+			<div className='text-container' id='about'>
 				<div>
 					<div className="font1 headings">What we Do</div>
-					<p>Lorem ipsum dolor sit amet, pri an option persius appetere, ex iriure aperiam necessitatibus nec. Debet deterruisset necessitatibus pro id, per in congue possim pericula, tota mutat labore nec eu. Ea laudem offendit eloquentiam vel, saepe pertinax ei ius. Ut tollit gubergren pri, vide lorem suscipit ne vim, doctus dignissim usu in.
+					<p>
+					Lorem ipsum dolor sit amet, pri an option persius appetere, ex iriure aperiam necessitatibus nec. Debet deterruisset necessitatibus pro id, per in congue possim pericula, tota mutat labore nec eu. Ea laudem offendit eloquentiam vel, saepe pertinax ei ius. Ut tollit gubergren pri, vide lorem suscipit ne vim, doctus dignissim usu in. Tollit vocibus pertinax ea duo, quo wisi graece nostrud ad. Falli iracundia pro ei, et vocent laboramus mnesarchum eum. At dicant audiam efficiantur eos, has iracundia euripidis abhorreant cu, an prompta placerat vix. Habemus minimum convenire sit ex. Eu sit nulla ridens quaeque, ad nec eruditi intellegebat.<br></br><br></br>
+					Lorem ipsum dolor sit amet, pri an option persius appetere, ex iriure aperiam necessitatibus nec. Debet deterruisset necessitatibus pro id, per in congue possim pericula, tota mutat labore nec eu. Ea laudem offendit eloquentiam vel, saepe pertinax ei ius. Ut tollit gubergren pri, vide lorem suscipit ne vim, doctus dignissim usu in.
 					<br></br><br></br>
 					Tollit vocibus pertinax ea duo, quo wisi graece nostrud ad. Falli iracundia pro ei, et vocent laboramus mnesarchum eum. At dicant audiam efficiantur eos, has iracundia euripidis abhorreant cu, an prompta placerat vix. Habemus minimum convenire sit ex. Eu sit nulla ridens quaeque, ad nec eruditi intellegebat.</p>
 				</div>
@@ -83,7 +85,7 @@ class Filler extends Component {
 	render() {
 		return (
 			<div id='filler-container'>
-				<div className='filler-item' id='slogan-container'>possible slideshow here!!!</div>
+				<div className='filler-item' id='slogan-container'></div>
 				<div className='filler-item' id='slogan'>Find<br></br>Your<br></br>Cause</div>
 			</div>
 		);
@@ -93,7 +95,7 @@ class Filler extends Component {
 class Team extends Component {
 	render() {
 		return (
-			<div className='text-container'>
+			<div className='text-container' id='team'>
 				<div>
 					<div className="font1 headings">Meet The Team</div>
 					<div className="font1"><br></br>QT3.14</div>
@@ -114,8 +116,10 @@ class Footer extends Component {
 	render() {
 		return (
 			<div>
-				<div className="green-line"></div>
+				<div className="green-line font2"></div>
 				<div id='footer-container'>
+						<div className="font1" id='footer-title'>The Bridge Project</div>
+						<p>(C) Copyright 2017 qt3.14</p>
 				</div>
 			</div>
 		);

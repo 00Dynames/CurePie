@@ -50,27 +50,58 @@ class Tags extends Component {
   render () {
     return (
       <div>
-        Or Click on one of the tags below:
+        <p>Or, click on one of the tags below:</p>
         <div className="tags">
-          #hurricane<br />
-          #burma<br />
-          #landslide<br />
-          #poverty<br />
-          #children<br />
+          <a href='#'>#hurricane</a><br />
+          <a href='#'>#landslide</a><br />
+          <a href='#'>#burma</a><br />
+						<a href='#'>#children</a><br />
+					<a href='#'>#poverty</a><br />
         </div>
       </div>
     )
   }
 }
 
+class Sort extends Component {
+	render () {
+		return (
+			<div class="sort">
+				<p>Sort by:</p>
+			<MuiThemeProvider>
+			 <DropDownMenu class="sort-dropdown">
+				 <MenuItem primaryText="Most Recent"/>
+				 <MenuItem primaryText="Most Searched"/>
+			 </DropDownMenu>
+		 </MuiThemeProvider>
+		 </div>
+		)
+	}
+}
 
+class BreakingNews extends Component {
+  render() {
+    return (
+      <div>
+        <div className="news-title">Breaking News Events</div>
+        <ul>
+          <li>Tornado in North Carolina, USA devastates. Food and general provisions needed for donation.</li>
+          <li>Volunteering Efforts in Myanmar making a difference.</li>
+          <li>More events...</li>
+        </ul>
+      </div>
+    )
+  }
+}
 
 class LeftSideBar extends Component {
   render() {
     return (
-      <div>
+      <div id='sidebar-container'>
         <SearchTag />
         <Tags />
+				<Sort />
+				<BreakingNews />
       </div>
     )
   }
