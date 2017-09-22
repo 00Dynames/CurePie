@@ -63,12 +63,6 @@ class Tags extends Component {
   }
 }
 
-class sortDropdown extends Component {
-  render () {
-    return (
-    )
-  }
-}
 
 
 class LeftSideBar extends Component {
@@ -77,7 +71,6 @@ class LeftSideBar extends Component {
       <div>
         <SearchTag />
         <Tags />
-        <DropDownMenuSimpleExample />
       </div>
     )
   }

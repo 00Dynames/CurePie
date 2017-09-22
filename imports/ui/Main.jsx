@@ -44,6 +44,7 @@ export default class Main extends Component{
         return(
             <div>
                 <NavBar />
+                <List />
                 {this.whichPage()}
             </div>
         );
