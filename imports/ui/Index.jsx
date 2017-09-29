@@ -4,7 +4,7 @@ import Exp from './landingpg.jsx';
 import MapContainer from './Map.jsx';
 import List from './List.jsx';
 import AppBarExampleIconButton from './Navbar.jsx'
-import EventDeets from './event_details.jsx'
+import EventDetails from './event_details.jsx'
 import NavBar from './Navbar.jsx'
 import Listview from './Listview.jsx'
 
@@ -19,9 +19,12 @@ export default class Index extends Component{
     whichPage = (props) => {
 
         if(this.state.page == "Map"){
-            return <MapContainer switchToHome={this.switchToHome.bind(this)} switchToList={this.switchToList.bind(this)} />
+            return <MapContainer  switchToEvent={this.switchToEvent.bind(this)} switchToList={this.switchToList.bind(this)} />
         } else if (this.state.page == "List"){
-            return <Listview switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} />
+            return <div><Listview switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} /></div>
+        } else if (this.state.page == "Event"){
+            console.log("EVVNEET");
+            return <EventDetails  event={this.state.event}/> 
         }
 
         return <Exp switchToMap={this.switchToMap.bind(this)} switchToList={this.switchToList.bind(this)}/>;
@@ -38,6 +41,10 @@ export default class Index extends Component{
 
     switchToList = () => {
         this.setState({page: "List"});
+    }
+
+    switchToEvent = (e) => {
+        this.setState({page: "Event", event: e});
     }
 
     // Render component
