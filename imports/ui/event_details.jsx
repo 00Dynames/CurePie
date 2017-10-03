@@ -67,7 +67,7 @@ class Info extends Popup {
                     <ul>    
                         {this.getNewsArticles().map((article) => (article))}
                     </ul>
-                    <Charities />
+                    <Charities charities={this.props.event.charities} />
                 </div>
             </div>
         );
@@ -105,7 +105,22 @@ class Summary extends Component {
 }
 
 class Charities extends Component {
-    
+
+    getcharities = () => {
+
+        result = [];
+        for (i = 0; i < this.props.charities.length; i ++){
+            result.push(
+                <tr>
+                    <td><a href={this.props.charities[i].url} target = "_blank">{this.props.charities[i].name}</a></td>
+                    <td>{this.props.charities[i].description}</td>
+                </tr>
+            )
+        }
+        return result;
+    }
+
+
     render() {
         return (
             <div className="Charities-block">
@@ -115,18 +130,7 @@ class Charities extends Component {
                         <th>Name</th>
                         <th>Role</th>
                     </tr>
-                    <tr>
-                        <td><a href="http://www.redcross.org.au/news/hurricane-irma-rips-through-the-caribbean.aspx" target = "_blank">Red Cross</a></td>
-                        <td>First Aid, Shelter, Water</td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://www.oxfam.org.au/2017/09/hurricane-irma-oxfam-is-ready-to-save-lives/" target = "_blank">Oxfam</a></td>
-                        <td>Assisting with Evacuations</td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://www.americares.org/en/newsroom/news/2017/0907-Irma/" target = "_blank">Americares</a></td>
-                        <td>Medicine, supplies and health services</td>
-                    </tr>
+                    {this.getcharities().map((charity) => (charity))}
                 </table>
             </div>
         )
