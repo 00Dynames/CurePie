@@ -23,7 +23,6 @@ export default class Index extends Component{
         } else if (this.state.page == "List"){
             return <div><Listview switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} /></div>
         } else if (this.state.page == "Event"){
-            console.log("EVVNEET");
             return <EventDetails  event={this.state.event}/> 
         }
 
