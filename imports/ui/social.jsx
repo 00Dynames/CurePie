@@ -4,8 +4,9 @@ import {
   ShareCounts,
   generateShareIcon,
 } from 'react-share';
+import '../css/social.css'
 
-import exampleImage from './react-share-pin-example.png';
+// import exampleImage from './react-share-pin-example.png';
 
 const {
   FacebookShareButton,
@@ -46,6 +47,7 @@ const EmailIcon = generateShareIcon('email');
 class SocialBar extends Component {
 	render() {
 		return (
+			<div id='social-bar'>
 			<div className='social-container'>
 				<div className='social-single'>
 					<FacebookShareButton
@@ -63,6 +65,21 @@ class SocialBar extends Component {
 					</FacebookShareCount>
 				</div>
 				<div className='social-single'>
+					<GooglePlusShareButton
+						url={'https://google.com'}
+						quote={'Find your cause with The Bridge Project.'}
+						className='social-btn'>
+						<GooglePlusIcon
+							size={32}
+							round />
+					</GooglePlusShareButton>
+					<GooglePlusShareCount
+						url={'https://google.com'}
+						className='social-count'>
+						{count => count}
+					</GooglePlusShareCount>
+				</div>
+				<div className='social-single'>
 					<TwitterShareButton
 						url={'https://google.com'}
 						quote={'Find your cause with The Bridge Project.'}
@@ -71,11 +88,6 @@ class SocialBar extends Component {
 							size={32}
 							round />
 					</TwitterShareButton>
-					<TwitterShareCount
-						url={'https://google.com'}
-						className='social-count'>
-						{count => count}
-					</TwitterShareCount>
 				</div>
 				<div className='social-single'>
 					<EmailShareButton
@@ -87,6 +99,7 @@ class SocialBar extends Component {
 							round />
 					</EmailShareButton>
 				</div>
+			</div>
 			</div>
 		);
 	}

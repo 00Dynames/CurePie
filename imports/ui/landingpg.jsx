@@ -8,6 +8,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
 import '../css/landingpg.css'
+import SocialBar from './social.jsx'
 
 
 const styles = {
@@ -126,6 +127,7 @@ class Exp extends Component {
 		return (
 			<div>
 				<Open switchToMap={this.props.switchToMap.bind(this)} switchToList={this.props.switchToList.bind(this)} />
+				<SocialBar />
 				<About />
 				<Filler />
 				<Team />

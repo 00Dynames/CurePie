@@ -1,20 +1,37 @@
+#social-bar {
+	position: fixed;
+	top:300px;
+	left:0px;
+	z-index:2;
+	width:50px;
+	background-color:#212121;
+}
 .social-container {
-	height:50px;
-	display:flex;
+	padding-top:20px;
 	justify-content:center;
 	align-items:center;
-	position:relative;
-	z-index:2;
 }
 
 .social-single {
-	height:50px;
+	height:55px;
+	width:50px;
+	align-items:center;
+	position:relative;
 }
 
 .social-btn {
-
+	position:absolute;
+	z-index: 1;
+	left:9px;
 }
 
-.social-count {
 
+.social-count {
+	position:absolute;
+	z-index: 0;
+	top:28px;
+	width:100%;
+	font-size:0.8em;
+	color:white;
+	text-align:center !important;
 }
