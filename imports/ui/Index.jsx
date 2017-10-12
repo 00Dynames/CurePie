@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 
 import Exp from './landingpg.jsx';
 import MapContainer from './Map.jsx';
-import List from './List.jsx';
 import AppBarExampleIconButton from './Navbar.jsx'
 import EventDetails from './event_details.jsx'
 import NavBar from './Navbar.jsx'

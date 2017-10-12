@@ -15,6 +15,7 @@ meteor npm install --save google-maps-react
 meteor npm install --save react-addons-pure-render-mixin
 meteor add react-meteor-data
 meteor npm i --save material-ui-search-bar
+meteor npm install --save request
 
 API Keys
 =========

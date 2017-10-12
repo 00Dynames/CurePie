@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Divider from 'material-ui/Divider';
 import RaisedButton from 'material-ui/RaisedButton';
+import { Meteor } from 'meteor/meteor';
 
 import '../css/Listview.css'
 {/*import Footer from './landingpg.jsx'*/}
@@ -28,6 +29,7 @@ class Heading extends Component {
 class Description extends Component {
     
     getEvents = () => {
+        subscription = Meteor.subscribe('events');
         events = Events.find().fetch();
         result = [];
         for (i = 0; i < events.length; i++){
@@ -67,3 +69,5 @@ export default class DescriptionBox extends Component {
         )
     }
 }
+
+

@@ -1,6 +1,15 @@
 import { Mongo } from 'meteor/mongo';
+import { Meteor } from 'meteor/meteor';
 
 export const Events = new Mongo.Collection('events');
+
+if (Meteor.isServer){
+    Meteor.publish('events', function getEvents(){
+        console.log("publish events");
+        return Events.find();
+    });
+}
+
 
 /*
 once you start up the app
