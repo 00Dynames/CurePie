@@ -36,6 +36,21 @@ class Popup extends Component {
     }
 }
 
+class Help_Popup extends Component {
+    render() {
+      return (
+        <div id="help-popup">
+          <p>How can you help?</p>
+          <ol>
+            <li>Find a charity you would like to support</li>
+            <li>Select the amount you would like to donate</li>
+            <li>Select the donate button to finalise your donation</li>
+          </ol>
+        </div>
+      )
+    }
+}
+
 class Info extends Popup {
 
     getNewsArticles = () => {
@@ -51,7 +66,7 @@ class Info extends Popup {
             <div id='details-container'>
                 <div className="panel-container">
                     <div className="panel-image"></div>
-                    <Summary 
+                    <Summary
                         date={this.props.event.date}
                         location={this.props.event.location}
                         affected={this.props.event.affected}
@@ -61,21 +76,21 @@ class Info extends Popup {
                 <div className="info-block">
                     <div className="info-heading">What's happening</div>
                     <p>
-                        {this.props.event.description} 
+                        {this.props.event.description}
                     </p>
                     <div className="info-heading">News Articles</div>
-                    <ul>    
+                    <ul>
                         {this.getNewsArticles().map((article) => (article))}
                     </ul>
                     <Charities charities={this.props.event.charities} />
                 </div>
             </div>
         );
-    } 
+    }
 }
 
 class Summary extends Component {
-  
+
     render() {
         return (
             <table id='summary-table'>
@@ -156,6 +171,7 @@ class EventDetails extends Component {
         return (
             <div>
                 <Popup name={this.props.event.name} />
+                <Help_Popup />
                 <Info event={this.props.event} />
                 <Footer />
             </div>
@@ -168,9 +184,8 @@ EventDetails.propTypes = {
 };
 
 export default createContainer(() => {
+
     return {
         events: Events.find({}).fetch(),
     };
 }, EventDetails);
-
-

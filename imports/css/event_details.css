@@ -91,6 +91,44 @@ li {
   width: 70%;
   padding-bottom: 5%;
 }
+#help-popup {
+  width: 50%;
+  height: 150px;
+  border-radius: 5px;
+  position: relative;
+  left: 350px;
+  text-align: center;
+  padding: 0%;
+  background-color: #FBBBB9
+}
+#help-popup p {
+  font-size: 1.2em;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  text-align: center;
+  color: #800517;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+#help-popup ol {
+  text-align: center;
+  list-style-position: inside;
+}
+#help-popup li {
+  text-align: center;
+}
+.closebtn {
+  color: white;
+  float: right;
+  cursor: pointer;
+  line-height: 20px;
+  transition: 0.3s;
+  font-weight: bold;
+  font-size: 22px;
+}
+.closebtn:hover {
+  color: black;
+}
 #Charities-table {
   border:1px solid grey;
   width: 80%;
