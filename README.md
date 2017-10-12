@@ -8,6 +8,7 @@ $ meteor
 
 Packages
 ========
+``` sh
 meteor npm install --save react-router history
 meteor npm install --save react-mounter
 meteor npm install react-icons --save
@@ -18,6 +19,7 @@ meteor npm i --save material-ui-search-bar
 meteor npm install --save react-share
 meteor npm install --save meteor-node-stubs
 meteor npm install --save core-js
+```
 
 API Keys
 =========
