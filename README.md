@@ -32,4 +32,5 @@ open the mongo db console by typing 'meteor mongo' in another terminal
 check that the collection 'events' exists by typing 'show collections'
 it should ouput 'events'
 THEN execute the commands below
+
 ---
