@@ -1,0 +1,20 @@
+.social-container {
+	height:50px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	position:relative;
+	z-index:2;
+}
+
+.social-single {
+	height:50px;
+}
+
+.social-btn {
+
+}
+
+.social-count {
+
+}
