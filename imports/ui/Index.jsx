@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Meteor } from 'meteor/meteor';
 
 import Exp from './landingpg.jsx';
 import MapContainer from './Map.jsx';

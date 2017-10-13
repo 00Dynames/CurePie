@@ -13,6 +13,7 @@ export class MapContainer extends Component {
     getEvents = () => {
         subscription = Meteor.subscribe('events');
         events = Events.find().fetch();
+        console.log(subscription);
         console.log(events);
         markers = [];
         for (i = 0; i < events.length; i++){

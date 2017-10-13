@@ -17,6 +17,7 @@ import {
 import '../css/event_details.css'
 import { Events } from '../api/events.js';
 import { createContainer } from 'meteor/react-meteor-data';
+import { Session } from 'meteor/session';
 
 const style = {
     margin: 12,
@@ -46,6 +47,26 @@ class Info extends Popup {
         return result;
     }
 
+    getNews = (topic) => {
+        subscription = Meteor.subscribe("getNews");
+        Meteor.call('getNews', topic, (error, result, n) => {
+            if(error){
+                //console.log(error);
+                return false;
+            } else {
+                console.log(result);
+                Session.set('news', result);
+            }
+        });
+        news = Session.get('news');
+        result = [];
+        console.log(news);
+        for (i = 0; i < news.length; i ++){
+            result.push(<li><a href={news[i].webUrl}>{news[i].webTitle}</a></li>);
+        }
+        return result;
+    }
+
     render(){
         return (
             <div id='details-container'>
@@ -66,6 +87,7 @@ class Info extends Popup {
                     <div className="info-heading">News Articles</div>
                     <ul>    
                         {this.getNewsArticles().map((article) => (article))}
+                        {this.getNews(this.props.event.name).map((article) => (article))}
                     </ul>
                     <Charities charities={this.props.event.charities} />
                 </div>
