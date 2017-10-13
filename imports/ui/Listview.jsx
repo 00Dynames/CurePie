@@ -34,7 +34,7 @@ class Description extends Component {
             console.log(events[i]);
             result.push(
                 <div className="Event-box">
-                    <div className="Subtitle1">{events[i].name}</div> 
+                    <div className="Subtitle1" onClick={this.props.switchToEvent.bind(this, events[i])}>{events[i].name}</div> 
                     <p>{events[i].description}</p>
                     <div className="Info">{events[i].location}</div>
                 </div>
@@ -62,7 +62,7 @@ export default class DescriptionBox extends Component {
         return (
             <div>
                 <Heading />
-                <Description />
+                <Description switchToEvent={this.props.switchToEvent.bind(this)} />
             </div>
         )
     }
