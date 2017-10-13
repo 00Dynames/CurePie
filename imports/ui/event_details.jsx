@@ -49,6 +49,7 @@ class Info extends Popup {
 
     getNews = (topic) => {
         subscription = Meteor.subscribe("getNews");
+        Session.setDefault('news', []);
         Meteor.call('getNews', topic, (error, result, n) => {
             if(error){
                 //console.log(error);

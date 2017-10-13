@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Meteor } from 'meteor/meteor';
+import { Session } from 'meteor/session';
 
 import Exp from './landingpg.jsx';
 import MapContainer from './Map.jsx';
@@ -12,9 +13,11 @@ export default class Index extends Component{
 
     constructor(props){
         super(props);
-        this.state = {page: "Home"};
+        this.state = {
+            page: "Home",
+            loggedIn: true
+        };
     }
-
 
     whichPage = (props) => {
 
@@ -49,6 +52,7 @@ export default class Index extends Component{
     // Render component
     render (){
         console.log(this.state);
+        //Session.set('news', []); 
         return(
             <div>
                 <AppBarExampleIconButton 

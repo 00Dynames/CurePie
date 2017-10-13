@@ -3,7 +3,7 @@ import { Events } from '../imports/api/events.js';
 import { HTTP } from 'meteor/http';
 
 Meteor.startup(() => {
-  // code to run on server at startup
+    // code to run on server at startup
 });
 
 Meteor.methods({

@@ -9,7 +9,6 @@ import TextField from 'material-ui/TextField';
 
 import '../css/landingpg.css'
 
-
 const styles = {
   underlineStyle: {
     borderColor: yellow700,
@@ -18,9 +17,6 @@ const styles = {
 		color: grey100,
 	},
 };
-
-
-
 
 class Open extends Component {
 	render() {
