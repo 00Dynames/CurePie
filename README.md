@@ -19,6 +19,7 @@ meteor npm i --save material-ui-search-bar
 meteor npm install --save react-share
 meteor npm install --save meteor-node-stubs
 meteor npm install --save core-js
+meteor npm install --save apeman-react-slideshow
 ```
 
 API Keys
