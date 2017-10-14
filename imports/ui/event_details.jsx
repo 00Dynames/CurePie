@@ -90,7 +90,7 @@ class Info extends Popup {
                         {this.getNewsArticles().map((article) => (article))}
                         {this.getNews(this.props.event.name).map((article) => (article))}
                     </ul>
-                    <Charities charities={this.props.event.charities} loggedIn={this.props.loggedIn} />
+                    <Charities moneyDonated={this.props.event.moneyDonated} charities={this.props.event.charities} loggedIn={this.props.loggedIn} />
                 </div>
             </div>
         );
@@ -153,12 +153,12 @@ class Charities extends Component {
 
         result = [];
         for (i = 0; i < this.props.charities.length; i ++){
-            console.log(this.props.charities[i]);
             result.push(
                 <tr>
                     {this.donateColumn()}
                     <td><a href={this.props.charities[i].url} target = "_blank">{this.props.charities[i].name}</a></td>
                     <td>{this.props.charities[i].description}</td>
+                    <td>{this.props.moneyDonated}</td>
                 </tr>
             )
         }
@@ -169,7 +169,7 @@ class Charities extends Component {
     render() {
 
         donateTitle = (this.props.loggedIn) ? <th></th> : "";       
-
+        
         return (
             <div className="Charities-block">
                 <div className="info-heading">Charities Currently Involved</div>
@@ -178,6 +178,7 @@ class Charities extends Component {
                         {donateTitle}
                         <th>Name</th>
                         <th>Role</th>
+                        <th>Money donated</th>
                     </tr>
                     {this.getcharities().map((charity) => (charity))}
                 </table>
