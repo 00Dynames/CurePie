@@ -40,9 +40,10 @@ body, p {
 	background-repeat:no-repeat;
 }
 .title-text {
-	font-size:4em !important;
+	font-size:6em !important;
 	color:white !important;
 	padding-top: 35vh !important;
+	margin-bottom:80px;
 }
 #search-bar-container {
 	display:flex;
@@ -101,7 +102,7 @@ body, p {
   background: #419be0;
 }
 .filler-item {
-	height:70vh;
+	height:500px;
 	width:50vw;
 	align-self:center;
 	margin: 0 auto;

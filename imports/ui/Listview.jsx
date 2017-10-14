@@ -26,7 +26,7 @@ class Heading extends Component {
 }
 
 class Description extends Component {
-    
+
     getEvents = () => {
         events = Events.find().fetch();
         result = [];
@@ -34,7 +34,7 @@ class Description extends Component {
             console.log(events[i]);
             result.push(
                 <div className="Event-box">
-                    <div className="Subtitle1">{events[i].name}</div> 
+                    <div className="Subtitle1">{events[i].name}</div>
                     <p>{events[i].description}</p>
                     <div className="Info">{events[i].location}</div>
                 </div>
@@ -44,7 +44,7 @@ class Description extends Component {
          return result;
      }
 
-    
+
     render() {
         return (
             <div id='all-events'>

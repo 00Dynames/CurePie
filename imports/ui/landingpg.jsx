@@ -9,7 +9,7 @@ import TextField from 'material-ui/TextField';
 
 import '../css/landingpg.css'
 import SocialBar from './social.jsx'
-
+import {ApSlideshow, ApSlideshowStyle } from 'apeman-react-slideshow';
 
 const styles = {
   underlineStyle: {
@@ -19,7 +19,6 @@ const styles = {
 		color: grey100,
 	},
 };
-
 
 
 
@@ -64,6 +63,26 @@ class Open extends Component {
 	}
 }
 
+class Slides extends Component {
+	render() {
+		return (
+			<div>
+				<ApSlideshowStyle />
+        <ApSlideshow images={[
+                    './images/charity.jpg',
+										'./images/volunteer.jpg',
+                    './images/redcross.jpg',
+										'./images/fire.jpg'
+                ]}
+                     repeat={ true }
+                     width={ '100%' }
+                     height={ 500 }
+										 interval={ 5000 }
+        />
+      </div>
+		);
+	}
+}
 
 class About extends Component {
 	render() {
@@ -81,11 +100,15 @@ class About extends Component {
 }
 
 class Filler extends Component {
+
 	render() {
 		return (
 			<div id='filler-container'>
-				<div className='filler-item' id='slogan-container'>possible slideshow here!!!</div>
-				<div className='filler-item' id='slogan'>Find<br></br>Your<br></br>Cause</div>
+				<div className='filler-item' id='slogan-container'>
+					<Slides />possible slideshow here!!!
+      	</div>
+			<div className='filler-item'id='slogan'>
+				Find<br></br>Your<br></br>Cause</div>
 			</div>
 		);
 	}
