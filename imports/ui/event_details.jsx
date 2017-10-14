@@ -90,7 +90,7 @@ class Info extends Popup {
                         {this.getNewsArticles().map((article) => (article))}
                         {this.getNews(this.props.event.name).map((article) => (article))}
                     </ul>
-                    <Charities charities={this.props.event.charities} />
+                    <Charities charities={this.props.event.charities} loggedIn={this.props.loggedIn} />
                 </div>
             </div>
         );
@@ -129,12 +129,34 @@ class Summary extends Component {
 
 class Charities extends Component {
 
+    donateButton = () => {
+        console.log(this.props.loggedIn);
+        if (this.props.loggedIn){
+            return (<MuiThemeProvider>
+                        <RaisedButton 
+                            className="btn"
+                            label="Donate"
+                            key={this.props.charities[i].name}
+                            onClick={this.props.switchToMap}
+                        />
+                   </MuiThemeProvider>);
+        }
+    }
+
+    donateColumn = () => {
+        if (this.props.loggedIn){
+            return <td>{this.donateButton()}</td>;
+        }
+    }
+
     getcharities = () => {
 
         result = [];
         for (i = 0; i < this.props.charities.length; i ++){
+            console.log(this.props.charities[i]);
             result.push(
                 <tr>
+                    {this.donateColumn()}
                     <td><a href={this.props.charities[i].url} target = "_blank">{this.props.charities[i].name}</a></td>
                     <td>{this.props.charities[i].description}</td>
                 </tr>
@@ -145,11 +167,15 @@ class Charities extends Component {
 
 
     render() {
+
+        donateTitle = (this.props.loggedIn) ? <th></th> : "";       
+
         return (
             <div className="Charities-block">
                 <div className="info-heading">Charities Currently Involved</div>
                 <table id="Charities-table">
                     <tr>
+                        {donateTitle}
                         <th>Name</th>
                         <th>Role</th>
                     </tr>
@@ -179,7 +205,7 @@ class EventDetails extends Component {
         return (
             <div>
                 <Popup name={this.props.event.name} />
-                <Info event={this.props.event} />
+                <Info loggedIn={this.props.loggedIn} event={this.props.event} />
                 <Footer />
             </div>
         )

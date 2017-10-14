@@ -26,7 +26,7 @@ export default class Index extends Component{
         } else if (this.state.page == "List"){
             return <div><Listview switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} /></div>
         } else if (this.state.page == "Event"){
-            return <EventDetails  event={this.state.event}/> 
+            return <EventDetails  loggedIn={this.state.loggedIn} event={this.state.event}/> 
         }
 
         return <Exp switchToMap={this.switchToMap.bind(this)} switchToList={this.switchToList.bind(this)}/>;
