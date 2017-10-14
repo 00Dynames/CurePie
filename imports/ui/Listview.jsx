@@ -44,7 +44,7 @@ class Heading extends Component {
 class Listview extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {value: 1, searchval:''};
+		this.state = {sortval: 'date', searchval:''};
 		this.handleSearch = this.handleSearch.bind(this);
 		this.keyPress = this.keyPress.bind(this);
 	}
@@ -59,9 +59,18 @@ class Listview extends Component {
 			}
 	 }
 
-	handleChange = (event, index, value) => this.setState({value});
+	handleChange = (event, index, value) => {
+		console.log(value);
+		this.setState({sortval:value});
+	}
+
+	handleSort = (event) => {
+		console.log(event.target.value);
+		this.setState({sortval: event.target.value});
+	}
+
     getEvents = () => {
-        events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"} }).fetch();
+        events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}} ).fetch();
         result = [];
         for (i = 0; i < events.length; i++){
             result.push(
@@ -73,7 +82,9 @@ class Listview extends Component {
 	                    <div>{events[i].description.slice(0,500)}...</div>
 	                    <div className="single-event-info">
 												<strong className='color'>Type</strong>: {events[i].type}&emsp;
-												<strong className='color'>Location</strong>: {events[i].location}</div>
+												<strong className='color'>Location</strong>: {events[i].location}&emsp;
+												<strong className='color'>Date</strong>: {events[i].date}
+											</div>
 										</div>
 								</div>
             )
@@ -101,15 +112,15 @@ class Listview extends Component {
 												<br />
 												<div className='font3 sidebar-label'>Sort by:</div>
 												<DropDownMenu
-													value={this.state.value}
+													value={this.state.sortval}
 													onChange={this.handleChange}
 													className='sidebar-dropdown'
 													selectedMenuItemStyle={ {color: '#00897b'} }
 													autoWidth={false}
 													style={ {width:'100%'} }>
-									        <MenuItem value={1} primaryText="Most Recent" />
-									        <MenuItem value={2} primaryText="Most Active" />
-									        <MenuItem value={3} primaryText="Nearby" />
+									        <MenuItem value={'date'} primaryText="Most Recent" />
+									        <MenuItem value={'pop'} primaryText="Most Active" />
+									        <MenuItem value={'near'} primaryText="Nearby" />
 									      </DropDownMenu>
 											</Paper>
 										</MuiThemeProvider>
