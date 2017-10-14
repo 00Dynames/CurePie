@@ -45,8 +45,12 @@ body, p {
 .title-text {
 	font-size:6em !important;
 	color:white !important;
-	padding-top: 35vh !important;
+	padding-top: 20vh !important;
 	margin-bottom:80px;
+}
+.title-img {
+	width:200px;
+	object-fit:cover;
 }
 #search-bar-container {
 	display:flex;

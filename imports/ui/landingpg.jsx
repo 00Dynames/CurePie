@@ -26,7 +26,10 @@ class Open extends Component {
 	render() {
 		return (
 			<div className="title-bg">
-					<div className="font1 headings title-text">The Bridge Project</div>
+
+					<div className="font1 headings title-text"><img src='/images/bridge.png' className='title-img'></img>
+					<br></br><br></br><br></br>
+					The Bridge Project</div>
 						<div id="search-bar-container">
 							<MuiThemeProvider>
 								<SearchBar
