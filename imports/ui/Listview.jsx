@@ -41,13 +41,29 @@ class Heading extends Component {
     }
 }
 
-class Description extends Component {
+class Listview extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {value: 1, searchval:''};
+		this.handleSearch = this.handleSearch.bind(this);
+		this.keyPress = this.keyPress.bind(this);
+	}
 
+	handleSearch = (event) => {
+		this.setState({ searchval: event.target.value });
+	}
+
+	keyPress(e){
+			if(e.keyCode == 13){
+				 console.log('SEARCHING FOR:', e.target.value);
+			}
+	 }
+
+	handleChange = (event, index, value) => this.setState({value});
     getEvents = () => {
-        events = Events.find().fetch();
+        events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"} }).fetch();
         result = [];
         for (i = 0; i < events.length; i++){
-            console.log(events[i]);
             result.push(
                 <div className="single-event">
 										<img src='/images/fire.jpg' className='single-event-img'></img>
@@ -61,7 +77,6 @@ class Description extends Component {
 										</div>
 								</div>
             )
-            //div className="Info">{events[i].date}</div>
          }
          return result;
      }
@@ -71,7 +86,34 @@ class Description extends Component {
         return (
             <div id='event-body-container' className='font2'>
                 <div className= "sidebar">
-									<SideBar />
+									<div className='sidebar-container font3'>
+
+										<MuiThemeProvider>
+											<Paper style={paperstyle} zDepth={3} className='sidebar-paper'>
+												<TextField
+													hintText="Search by keyword"
+													className='search-bar'
+													value={this.state.searchval}
+													onKeyDown={this.keyPress}
+													onChange={this.handleSearch}/>
+												<div className='font3 sidebar-label'>view trending:</div>
+													insert tags here i guess
+												<br />
+												<div className='font3 sidebar-label'>Sort by:</div>
+												<DropDownMenu
+													value={this.state.value}
+													onChange={this.handleChange}
+													className='sidebar-dropdown'
+													selectedMenuItemStyle={ {color: '#00897b'} }
+													autoWidth={false}
+													style={ {width:'100%'} }>
+									        <MenuItem value={1} primaryText="Most Recent" />
+									        <MenuItem value={2} primaryText="Most Active" />
+									        <MenuItem value={3} primaryText="Nearby" />
+									      </DropDownMenu>
+											</Paper>
+										</MuiThemeProvider>
+									</div>
                 </div>
                 <div className="events-panel" >
                     {this.getEvents().map((event) => (event))}
@@ -81,66 +123,14 @@ class Description extends Component {
     }
 }
 
-class SideBar extends Component {
-	constructor(props) {
-    super(props);
-    this.state = {value: 1, searchval:''};
-		this.handleSearch = this.handleSearch.bind(this);
-		this.keyPress = this.keyPress.bind(this);
-  }
 
-	handleSearch = (event) => {
-		this.setState({ searchval: event.target.value });
-	}
-
-	keyPress(e){
-      if(e.keyCode == 13){
-         console.log('SEARCHING FOR:', e.target.value);
-      }
-   }
-
-  handleChange = (event, index, value) => this.setState({value});
-	render() {
-		return (
-			<div className='sidebar-container font3'>
-
-				<MuiThemeProvider>
-					<Paper style={paperstyle} zDepth={3} className='sidebar-paper'>
-						<TextField
-							hintText="Search by keyword"
-							className='search-bar'
-							value={this.state.searchval}
-							onKeyDown={this.keyPress}
-							onChange={this.handleSearch}/>
-						<div className='font3 sidebar-label'>view trending:</div>
-							insert tags here i guess
-						<br />
-						<div className='font3 sidebar-label'>Sort by:</div>
-						<DropDownMenu
-							value={this.state.value}
-							onChange={this.handleChange}
-							className='sidebar-dropdown'
-							selectedMenuItemStyle={ {color: '#00897b'} }
-							autoWidth={false}
-							style={ {width:'100%'} }>
-			        <MenuItem value={1} primaryText="Most Recent" />
-			        <MenuItem value={2} primaryText="Most Active" />
-			        <MenuItem value={3} primaryText="Nearby" />
-			      </DropDownMenu>
-					</Paper>
-				</MuiThemeProvider>
-			</div>
-		);
-	}
-
-}
 
 export default class DescriptionBox extends Component {
     render() {
         return (
             <div id='page-container'>
                 <Heading />
-                <Description />
+                <Listview />
             </div>
         )
     }
