@@ -90,7 +90,7 @@ class About extends Component {
 			<div className='text-container'>
 				<div>
 					<div className="font1 headings">What we Do</div>
-					<p>Lorem ipsum dolor sit amet, pri an option persius appetere, ex iriure aperiam necessitatibus nec. Debet deterruisset necessitatibus pro id, per in congue possim pericula, tota mutat labore nec eu. Ea laudem offendit eloquentiam vel, saepe pertinax ei ius. Ut tollit gubergren pri, vide lorem suscipit ne vim, doctus dignissim usu in.
+					<p className='font2'>Lorem ipsum dolor sit amet, pri an option persius appetere, ex iriure aperiam necessitatibus nec. Debet deterruisset necessitatibus pro id, per in congue possim pericula, tota mutat labore nec eu. Ea laudem offendit eloquentiam vel, saepe pertinax ei ius. Ut tollit gubergren pri, vide lorem suscipit ne vim, doctus dignissim usu in.
 					<br></br><br></br>
 					Tollit vocibus pertinax ea duo, quo wisi graece nostrud ad. Falli iracundia pro ei, et vocent laboramus mnesarchum eum. At dicant audiam efficiantur eos, has iracundia euripidis abhorreant cu, an prompta placerat vix. Habemus minimum convenire sit ex. Eu sit nulla ridens quaeque, ad nec eruditi intellegebat.</p>
 				</div>
@@ -121,7 +121,7 @@ class Team extends Component {
 				<div>
 					<div className="font1 headings">Meet The Team</div>
 					<div className="font1"><br></br>QT3.14</div>
-					<div id='team-container'>
+					<div id='team-container' className='font2'>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Mahika Suri</div></div>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Dennis Bunadi</div></div>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Jacqueline Lee</div></div>

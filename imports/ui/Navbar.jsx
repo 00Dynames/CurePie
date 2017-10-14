@@ -50,7 +50,7 @@ class AppBarExampleIconButton extends Component {
 		return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <AppBar
-          title={<span style={styles.title}>The Curepie Project</span>}
+          title={<span style={styles.title} className="font1">THE BRIDGE PROJECT</span>}
           onTitleTouchTap={this.props.switchToHome}
           iconElementLeft={<div> </div>}
           iconElementRight={rightButtons}

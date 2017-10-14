@@ -1,58 +1,98 @@
-#all-events {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/*****************/
+/*GENERAL STYLING*/
+/*****************/
+#page-container {
+	max-width:100vw;
 }
-p {
-  font-size: 0.9em;
-  padding-bottom: 0%;
-  padding-top: 0%;
+
+html, body {
+	margin:0;
+	height:100%;
 }
-.main-title {
-  font-family: 'Fjalla One';
+/*********************/
+/*PAGE HEADER STYLING*/
+/*********************/
+.page-header {
+	/*padding:2% 0;*/
+	line-height:4em;
+}
+.event-title {
   text-transform: uppercase;
   font-size: 2em;
   text-align: center;
   color: black;
 }
-.Subtitle1 {
-  color: #00897B;
-  font-size: 1.2em;
-  font-family: 'Fjalla One';
-  text-transform: uppercase;
-  text-align: left;
-  padding-left: 10%;
-  padding-top: 2%;
-  padding-bottom: 0%;
+
+/*********************/
+/*EVENTS BODY STYLING*/
+/*********************/
+#event-body-container {
+
 }
-.Info {
-  color: #00897B;
-  font-size: 0.9em;
-  font-family: 'Fjalla One';
-  text-transform: uppercase;
-  text-align: left;
-  padding-left: 10%;
-  padding-top: 0%;
-  padding-bottom: 0%;
-  margin-top: -10px;
-}
-.Event-panel {
-  width: 80%;
-  float: right;
-  align-items: center;
-  background-color: lightgrey;
-}
-.Event-box {
-  width: 95%;
-  height: 170px;
-  background-color: white;
-  margin: 20px;
-}
-.Filters-panel {
-  width: 370 px;
-  background-color: grey;
-}
-.event-description {
-  align-self: center;
-  padding: 2%;
-}
+
+		/************************/
+		/*EVENTS SIDEBAR STYLING*/
+		/************************/
+
+		.sidebar {
+			position:absolute;
+			left:0;
+			width:20%;
+			align-self:flex-start;
+		}
+
+
+		/**********************/
+		/*EVENTS PANEL STYLING*/
+		/**********************/
+		.events-panel {
+			position: fixed;
+			right:0;
+			width:80%;
+			max-width:80%;
+			height: calc(100vh - 140px);
+			border-left: thin solid lightgrey;
+			overflow:scroll; overflow-x:hidden;
+		}
+
+
+		.single-event {
+			height:170px;
+			margin-bottom:10px;
+			display:flex;
+			align-items:center;
+    	border-bottom: thin dotted darkgrey;
+		}
+
+		.single-event-img {
+			height:150px; width:150px;
+			margin:10px;
+			align-self:flex-start;
+			object-fit:cover;
+		}
+
+		.single-event-text {
+			text-align:left;
+			font-size:0.8em;
+			max-height:150px;
+		}
+
+		.single-event-title {
+			position:relative;
+			top:0px;
+			font-weight: bold;
+			text-transform:uppercase;
+		}
+
+		.single-event-info {
+
+		}
+
+		.title-info-divider {
+			width:200px;
+			margin-left: 0;
+			margin-top:0;margin-bottom:0;
+		}
+		.color {
+			color:#00897B;
+		}

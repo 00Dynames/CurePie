@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Cantarell|Fjalla+One');
-
+@import url('https://fonts.googleapis.com/css?family=Lato|Fjalla+One|Cabin');
+/*@import url('https://fonts.googleapis.com/css?family=Lato');*/
+/*@import url('https://fonts.googleapis.com/css?family=Cabin');*/
 /*GENERAL STYLING*/
 body, p {
-	font-family: 'Cantarell';
 	line-height:1.5em;
-	margin: 3% 10%;
+	/*margin: 3% 10%;*/
 	text-align:center;
 }
 .headings {
@@ -26,9 +26,12 @@ body, p {
 }
 
 .font2 {
-	font-family: 'Cantarell';
+	font-family: 'Lato';
 }
 
+.font3 {
+	font-family:'Cabin';
+}
 
 
 /*COMPONENT SPECIFIC STYLING*/
