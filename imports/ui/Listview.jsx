@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Divider from 'material-ui/Divider';
 import RaisedButton from 'material-ui/RaisedButton';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+import DropDownMenu from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
 
 import { Events } from '../api/events.js';
+
+import { teal600 } from 'material-ui/styles/colors';
 // import './getheight.js';
 import '../css/Listview.css'
 
@@ -11,6 +17,17 @@ const style = {
   margin: 12,
 };
 
+const paperstyle = {
+	  height: 'calc(100vh - 160px)',
+		width: '95%',
+	  margin: 10,
+	  textAlign: 'center',
+	  display: 'inline-block',
+};
+
+const green = {
+	color: teal600,
+};
 class Heading extends Component {
     render() {
         return (
@@ -54,7 +71,7 @@ class Description extends Component {
         return (
             <div id='event-body-container' className='font2'>
                 <div className= "sidebar">
-									this will be the sidebar!!!!!!!!!!!!!!!!!!!!!!!
+									<SideBar />
                 </div>
                 <div className="events-panel" >
                     {this.getEvents().map((event) => (event))}
@@ -62,6 +79,36 @@ class Description extends Component {
             </div>
         )
     }
+}
+
+class SideBar extends Component {
+	constructor(props) {
+    super(props);
+    this.state = {value: 1};
+  }
+
+  handleChange = (event, index, value) => this.setState({value});
+	render() {
+		return (
+			<div className='sidebar-container font3'>
+
+				<MuiThemeProvider>
+					<Paper style={paperstyle} zDepth={3} className='sidebar-paper'>
+						<TextField hintText="Search by keyword" className='search-bar'/>
+						<div className='font3 sidebar-label'>view trending:</div>
+							insert tags here i guess
+						<br />
+						<div className='font3 sidebar-label'>Sort by:</div>
+						<DropDownMenu value={this.state.value} onChange={this.handleChange} className='sidebar-dropdown' selectedMenuItemStyle={ {color: '#00897b'} } autoWidth={false} style={ {width:'100%'} }>
+			        <MenuItem value={1} primaryText="Most Recent" />
+			        <MenuItem value={2} primaryText="Most Active" />
+			        <MenuItem value={3} primaryText="Nearby" />
+			      </DropDownMenu>
+					</Paper>
+				</MuiThemeProvider>
+			</div>
+		);
+	}
 }
 
 export default class DescriptionBox extends Component {

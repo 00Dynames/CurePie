@@ -41,6 +41,25 @@ html, body {
 			align-self:flex-start;
 		}
 
+		.sidebar-container {
+			min-width:20%;
+		}
+
+		.sidebar-paper {
+			overflow:auto; overflow-x:hidden;
+		}
+		.sidebar-label {
+			text-transform: uppercase;
+			margin:20px 10px 0 10px;
+		}
+
+		.sidebar-dropdown {
+			margin-top:-10px;
+		}
+		.search-bar > div > hr {
+			border-bottom-color: #00897b !important;
+		}
+
 
 		/**********************/
 		/*EVENTS PANEL STYLING*/
@@ -51,7 +70,7 @@ html, body {
 			width:80%;
 			max-width:80%;
 			height: calc(100vh - 140px);
-			border-left: thin solid lightgrey;
+			/*border-left: thin solid lightgrey;*/
 			overflow:scroll; overflow-x:hidden;
 		}
 

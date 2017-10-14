@@ -50,6 +50,7 @@ body, p {
 }
 .title-img {
 	width:200px;
+	margin-bottom:60px;
 	object-fit:cover;
 }
 #search-bar-container {
