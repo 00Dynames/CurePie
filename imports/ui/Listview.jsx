@@ -84,8 +84,20 @@ class Description extends Component {
 class SideBar extends Component {
 	constructor(props) {
     super(props);
-    this.state = {value: 1};
+    this.state = {value: 1, searchval:''};
+		this.handleSearch = this.handleSearch.bind(this);
+		this.keyPress = this.keyPress.bind(this);
   }
+
+	handleSearch = (event) => {
+		this.setState({ searchval: event.target.value });
+	}
+
+	keyPress(e){
+      if(e.keyCode == 13){
+         console.log('SEARCHING FOR:', e.target.value);
+      }
+   }
 
   handleChange = (event, index, value) => this.setState({value});
 	render() {
@@ -94,12 +106,23 @@ class SideBar extends Component {
 
 				<MuiThemeProvider>
 					<Paper style={paperstyle} zDepth={3} className='sidebar-paper'>
-						<TextField hintText="Search by keyword" className='search-bar'/>
+						<TextField
+							hintText="Search by keyword"
+							className='search-bar'
+							value={this.state.searchval}
+							onKeyDown={this.keyPress}
+							onChange={this.handleSearch}/>
 						<div className='font3 sidebar-label'>view trending:</div>
 							insert tags here i guess
 						<br />
 						<div className='font3 sidebar-label'>Sort by:</div>
-						<DropDownMenu value={this.state.value} onChange={this.handleChange} className='sidebar-dropdown' selectedMenuItemStyle={ {color: '#00897b'} } autoWidth={false} style={ {width:'100%'} }>
+						<DropDownMenu
+							value={this.state.value}
+							onChange={this.handleChange}
+							className='sidebar-dropdown'
+							selectedMenuItemStyle={ {color: '#00897b'} }
+							autoWidth={false}
+							style={ {width:'100%'} }>
 			        <MenuItem value={1} primaryText="Most Recent" />
 			        <MenuItem value={2} primaryText="Most Active" />
 			        <MenuItem value={3} primaryText="Nearby" />
@@ -109,6 +132,7 @@ class SideBar extends Component {
 			</div>
 		);
 	}
+
 }
 
 export default class DescriptionBox extends Component {
