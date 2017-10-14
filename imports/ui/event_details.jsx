@@ -18,6 +18,7 @@ import '../css/event_details.css'
 import { Events } from '../api/events.js';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Session } from 'meteor/session';
+import DonationDialogue from './donateDialogue.jsx';
 
 const style = {
     margin: 12,
@@ -90,7 +91,7 @@ class Info extends Popup {
                         {this.getNewsArticles().map((article) => (article))}
                         {this.getNews(this.props.event.name).map((article) => (article))}
                     </ul>
-                    <Charities moneyDonated={this.props.event.moneyDonated} charities={this.props.event.charities} loggedIn={this.props.loggedIn} />
+                    <Charities moneyDonated={this.props.event.moneyDonated} charities={this.props.event.charities} loggedIn={this.props.loggedIn} name={this.props.event.name} />
                 </div>
             </div>
         );
@@ -145,7 +146,12 @@ class Charities extends Component {
 
     donateColumn = () => {
         if (this.props.loggedIn){
-            return <td>{this.donateButton()}</td>;
+            //return <td>{this.donateButton()}</td>;
+            return (
+                <MuiThemeProvider>
+                    <DonationDialogue name={this.props.name} />
+                </MuiThemeProvider>   
+                );
         }
     }
 

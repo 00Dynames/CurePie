@@ -4,10 +4,10 @@ import { Session } from 'meteor/session';
 
 import Exp from './landingpg.jsx';
 import MapContainer from './Map.jsx';
-import AppBarExampleIconButton from './Navbar.jsx'
-import EventDetails from './event_details.jsx'
-import NavBar from './Navbar.jsx'
-import Listview from './Listview.jsx'
+import AppBarExampleIconButton from './Navbar.jsx';
+import EventDetails from './event_details.jsx';
+import NavBar from './Navbar.jsx';
+import Listview from './Listview.jsx';
 
 export default class Index extends Component{
 

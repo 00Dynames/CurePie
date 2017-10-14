@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import {grey100, yellow700} from 'material-ui/styles/colors';
-import SearchBar from 'material-ui-search-bar'
+import SearchBar from 'material-ui-search-bar';
 
 // MATERIAL UI THINGS
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
-import '../css/landingpg.css'
+import '../css/landingpg.css';
+import DonationDialogue from './donateDialogue.jsx';
 
 const styles = {
   underlineStyle: {
@@ -45,12 +46,13 @@ class Open extends Component {
                                     label="View Events"
                                     onClick={this.props.switchToList}
 								/>
-							<RaisedButton
+    							<RaisedButton
 									className="btn"
                                     label="View as Map"
                                     onClick={this.props.switchToMap}
-								/>
-								</div>
+                                />
+                                <DonationDialogue />
+                                </div>
 							</MuiThemeProvider>
 						</div>
 
