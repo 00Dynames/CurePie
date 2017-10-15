@@ -76,7 +76,7 @@ html, body {
 
 
 		.single-event {
-			height:170px;
+			height:200px;
 			margin-bottom:10px;
 			display:flex;
 			align-items:center;
@@ -84,7 +84,7 @@ html, body {
 		}
 
 		.single-event-img {
-			height:150px; width:150px;
+			height:180px; width:180px;
 			margin:10px;
 			align-self:flex-start;
 			object-fit:cover;
@@ -93,7 +93,7 @@ html, body {
 		.single-event-text {
 			text-align:left;
 			font-size:0.8em;
-			max-height:150px;
+			max-height:180px;
 		}
 
 		.single-event-title {
