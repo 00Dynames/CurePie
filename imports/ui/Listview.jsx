@@ -44,9 +44,10 @@ class Heading extends Component {
 class Listview extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {sortval: 'date', searchval:''};
+		this.state = {sortval: 'name', searchval:''};
 		this.handleSearch = this.handleSearch.bind(this);
 		this.keyPress = this.keyPress.bind(this);
+		var sort = {};
 	}
 
 	handleSearch = (event) => {
@@ -59,19 +60,17 @@ class Listview extends Component {
 			}
 	 }
 
-	handleChange = (event, index, value) => {
+	sortResults = (event, index, value) => {
 		console.log(value);
 		this.setState({sortval:value});
+		this.sort[value] = 1;
+		console.log(this.sort[value]);
 	}
 
-	handleSort = (event) => {
-		console.log(event.target.value);
-		this.setState({sortval: event.target.value});
-	}
 
     getEvents = () => {
-        events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}} ).fetch();
-        result = [];
+				events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: this.sort }).fetch();
+				result = [];
         for (i = 0; i < events.length; i++){
             result.push(
                 <div className="single-event">
@@ -113,14 +112,15 @@ class Listview extends Component {
 												<div className='font3 sidebar-label'>Sort by:</div>
 												<DropDownMenu
 													value={this.state.sortval}
-													onChange={this.handleChange}
+													onChange={this.sortResults}
 													className='sidebar-dropdown'
 													selectedMenuItemStyle={ {color: '#00897b'} }
 													autoWidth={false}
 													style={ {width:'100%'} }>
+									        <MenuItem value={'name'} primaryText="Alphabetical" />
 									        <MenuItem value={'date'} primaryText="Most Recent" />
-									        <MenuItem value={'pop'} primaryText="Most Active" />
-									        <MenuItem value={'near'} primaryText="Nearby" />
+									        <MenuItem value={'affected'} primaryText="Most Active" />
+									        <MenuItem value={'location'} primaryText="Nearby" />
 									      </DropDownMenu>
 											</Paper>
 										</MuiThemeProvider>
