@@ -41,10 +41,23 @@ class AppBarExampleIconButton extends Component {
   constructor(props) {
     super(props);
     this.state = {open: false};
+    this.clickLogin = this.clickLogin.bind(this);
+    this.clickHome = this.clickHome.bind(this);
   }
 
   handleToggle = () => this.setState({open: !this.state.open});
+
   handleClose = () => this.setState({open: false});
+
+  clickHome() {
+    this.props.switchToHome();
+    this.handleClose();
+  }
+
+  clickLogin() {
+    this.props.switchToLogin();
+    this.handleClose();
+  }
 
 	render() {
 
@@ -61,27 +74,30 @@ class AppBarExampleIconButton extends Component {
      </div>
     );
 
-    const sideBar = {
-      <Drawer
-        docked={false}
-        width={200}
-        open={this.state.open}
-        onRequestChange={(open) => this.setState({open})}
-      >
-        <MenuItem onClick={this.handleClose}>Menu Item</MenuItem>
-        <MenuItem onClick={this.handleClose}>Menu Item 2</MenuItem>
-      </Drawer>
-    }
-
 		return (
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <AppBar
-          title={<span style={styles.title} className="font1">THE BRIDGE PROJECT</span>}
-          onTitleTouchTap={this.props.switchToHome}
-          onLeftIconButtonTouchTap={this.handleToggle}
-          iconElementRight={rightButtons}
-        />
-      </MuiThemeProvider>
+      <div>
+        <MuiThemeProvider muiTheme={muiTheme}>
+          <AppBar
+            title={<span style={styles.title} className="font1">THE BRIDGE PROJECT</span>}
+            onTitleTouchTap={this.props.switchToHome}
+            onLeftIconButtonTouchTap={this.handleToggle}
+            iconElementRight={rightButtons}
+          />
+        </MuiThemeProvider>
+        <MuiThemeProvider>
+          <Drawer
+            docked={false}
+            width={300}
+            open={this.state.open}
+            onRequestChange={(open) => this.setState({open})}
+          >
+            <h1>Logged In As: GUEST</h1>
+            <MenuItem onClick={this.clickHome}>Home</MenuItem>
+            <MenuItem onClick={this.clickLogin}>Login</MenuItem>
+          </Drawer>
+        </MuiThemeProvider>
+      </div>
+
     )
 
   }
