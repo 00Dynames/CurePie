@@ -14,7 +14,9 @@ export class MapContainer extends Component {
         markers = [];
         for (i = 0; i < events.length; i++){
             console.log(events[i].location);
-            markers.push(<Marker key={i} position={{ lat: events[i].location[0], lng: events[i].location[1] }} title={'Click for\nmore details'}
+            markers.push(<Marker key={i}
+              position={{ lat: events[i].location[0], lng: events[i].location[1] }}
+              title={events[i].name+':\n'+events[i].type+'\n\nClick for more details'}
               onClick={this.props.switchToEvent.bind(this, events[i])} />)
         }
         return markers;

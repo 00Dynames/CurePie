@@ -48,6 +48,7 @@ h1 {
 }
 p {
   padding-top: 0%;
+  padding-left: 10%;
   text-align: left;
 }
 ul {
@@ -106,21 +107,25 @@ li {
   background-color: #FBBBB9
 }
 #help-popup p {
-  font-size: 1.2em;
+  font-size: 1.3em;
+  font-family: Arial;
   position: absolute;
+  padding-bottom: 0%;
   top: 0%;
-  left: 28%;
-  color: #800517;
-  font-weight: bolder;
+  left: 25%;
+  color: #CA002A;
+  font-weight: 600;
   text-transform: uppercase;
 }
 #help-popup ol {
   text-align: center;
   list-style-position: inside;
-  padding: 2%;
+  padding: 1%;
 }
 #help-popup li {
   text-align: center;
+  font-family: Arial;
+  font-size: 1em;
   padding: 0.3%;
 }
 .closebtn {
