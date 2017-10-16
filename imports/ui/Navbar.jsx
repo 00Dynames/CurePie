@@ -37,20 +37,22 @@ class AppBarExampleIconButton extends Component {
 
     const buttonStyle = {
      backgroundColor: 'transparent',
-     color: 'white'
+     color: 'white',
+		 position: 'relative',
+		 top:5
     };
 
     const rightButtons = (
      <div>
-       <FlatButton label="List View" style={buttonStyle} onClick={this.props.switchToList} />
-       <FlatButton label="Map View" style={buttonStyle} onClick={this.props.switchToMap} />
+       <FlatButton label="List View" style={buttonStyle} onClick={this.props.switchToList}/>
+       <FlatButton className='font1' label="Map View" style={buttonStyle} onClick={this.props.switchToMap} />
      </div>
     );
 
 		return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <AppBar
-          title={<span style={styles.title} className="font1">THE BRIDGE PROJECT</span>}
+          title={<span style={styles.title} className="font1"><img style={ {width:40, height:40, position:'relative', top:10} } src='/images/bridge1-white.png'></img>&ensp;THE BRIDGE PROJECT</span>}
           onTitleTouchTap={this.props.switchToHome}
           iconElementLeft={<div> </div>}
           iconElementRight={rightButtons}
