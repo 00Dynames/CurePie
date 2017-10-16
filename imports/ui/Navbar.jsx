@@ -7,6 +7,10 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import RaisedButton from 'material-ui/RaisedButton';
+
 
 
 function handleTouchTap() {
@@ -33,6 +37,15 @@ const muiTheme = getMuiTheme({
 
 
 class AppBarExampleIconButton extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {open: false};
+  }
+
+  handleToggle = () => this.setState({open: !this.state.open});
+  handleClose = () => this.setState({open: false});
+
 	render() {
 
     const buttonStyle = {
@@ -44,15 +57,28 @@ class AppBarExampleIconButton extends Component {
      <div>
        <FlatButton label="List View" style={buttonStyle} onClick={this.props.switchToList} />
        <FlatButton label="Map View" style={buttonStyle} onClick={this.props.switchToMap} />
+       <FlatButton label="Login" style={buttonStyle} onClick={this.props.switchToLogin} />
      </div>
     );
+
+    const sideBar = {
+      <Drawer
+        docked={false}
+        width={200}
+        open={this.state.open}
+        onRequestChange={(open) => this.setState({open})}
+      >
+        <MenuItem onClick={this.handleClose}>Menu Item</MenuItem>
+        <MenuItem onClick={this.handleClose}>Menu Item 2</MenuItem>
+      </Drawer>
+    }
 
 		return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <AppBar
           title={<span style={styles.title}>The Curepie Project</span>}
           onTitleTouchTap={this.props.switchToHome}
-          iconElementLeft={<div> </div>}
+          onLeftIconButtonTouchTap={this.handleToggle}
           iconElementRight={rightButtons}
         />
       </MuiThemeProvider>
