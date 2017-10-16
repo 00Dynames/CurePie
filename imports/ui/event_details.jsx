@@ -37,15 +37,24 @@ class Popup extends Component {
 }
 
 class Help_Popup extends Component {
+    state = {
+      showDiv: true,
+    }
     render() {
+      const { showDiv } = this.state
       return (
-        <div id="help-popup">
-          <p>How can you help?</p>
-          <ol>
-            <li>Find a charity you would like to support</li>
-            <li>Select the amount you would like to donate</li>
-            <li>Select the donate button to finalise your donation</li>
-          </ol>
+        <div>
+          { showDiv && (
+            <div id="help-popup">
+              <button className="closebtn" onClick={() => this.setState({ showDiv: !showDiv })}>X</button>
+              <p>How can you help?</p>
+              <ol>
+                <li>Find a charity you would like to support</li>
+                <li>Select the amount you would like to donate</li>
+                <li>Select the donate button to finalise your donation</li>
+              </ol>
+            </div>
+          )}
         </div>
       )
     }

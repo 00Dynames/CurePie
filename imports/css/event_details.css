@@ -48,6 +48,7 @@ h1 {
 }
 p {
   padding-top: 0%;
+  padding-left: 10%;
   text-align: left;
 }
 ul {
@@ -91,42 +92,62 @@ li {
   width: 70%;
   padding-bottom: 5%;
 }
+.popup-container {
+  padding: 0%;
+}
 #help-popup {
   width: 50%;
   height: 150px;
   border-radius: 5px;
   position: relative;
+  top: 0px;
   left: 350px;
   text-align: center;
   padding: 0%;
   background-color: #FBBBB9
 }
 #help-popup p {
-  font-size: 1.2em;
-  padding-top: 0%;
+  font-size: 1.3em;
+  font-family: Arial;
+  position: absolute;
   padding-bottom: 0%;
-  text-align: center;
-  color: #800517;
-  font-weight: bolder;
+  top: 0%;
+  left: 25%;
+  color: #CA002A;
+  font-weight: 600;
   text-transform: uppercase;
 }
 #help-popup ol {
   text-align: center;
   list-style-position: inside;
+  padding: 1%;
 }
 #help-popup li {
   text-align: center;
+  font-family: Arial;
+  font-size: 1em;
+  padding: 0.3%;
 }
 .closebtn {
-  color: white;
-  float: right;
+  color: black;
+  background-color: inherit;
+  border-radius: 4px;
+  width: 50px;
+  height: 30px;
+  border: 0px;
+  display: inline-block;
+  float: inherit;
+  position: relative;
+  left: 370px;
+  top: 2px;
+  z-index: 1;
   cursor: pointer;
   line-height: 20px;
   transition: 0.3s;
-  font-weight: bold;
-  font-size: 22px;
+  font-size: 25px;
 }
 .closebtn:hover {
+  background-color: red;
   color: black;
 }
 #Charities-table {
