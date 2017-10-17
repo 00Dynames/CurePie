@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Cantarell|Fjalla+One');
-
+@import url('https://fonts.googleapis.com/css?family=Lato|Fjalla+One|Cabin');
+/*@import url('https://fonts.googleapis.com/css?family=Lato');*/
+/*@import url('https://fonts.googleapis.com/css?family=Cabin');*/
 /*GENERAL STYLING*/
 body, p {
-	font-family: 'Cantarell';
 	line-height:1.5em;
-	margin: 3% 10%;
+	/*margin: 3% 10%;*/
 	text-align:center;
 }
 .headings {
@@ -26,9 +26,12 @@ body, p {
 }
 
 .font2 {
-	font-family: 'Cantarell';
+	font-family: 'Lato';
 }
 
+.font3 {
+	font-family:'Cabin';
+}
 
 
 /*COMPONENT SPECIFIC STYLING*/
@@ -40,9 +43,15 @@ body, p {
 	background-repeat:no-repeat;
 }
 .title-text {
-	font-size:4em !important;
+	font-size:6em !important;
 	color:white !important;
-	padding-top: 35vh !important;
+	padding-top: 20vh !important;
+	margin-bottom:80px;
+}
+.title-img {
+	width:200px;
+	margin-bottom:60px;
+	object-fit:cover;
 }
 #search-bar-container {
 	display:flex;
@@ -101,7 +110,7 @@ body, p {
   background: #419be0;
 }
 .filler-item {
-	height:70vh;
+	height:500px;
 	width:50vw;
 	align-self:center;
 	margin: 0 auto;
