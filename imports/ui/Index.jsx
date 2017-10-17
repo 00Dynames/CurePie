@@ -7,6 +7,7 @@ import AppBarExampleIconButton from './Navbar.jsx'
 import EventDetails from './event_details.jsx'
 import NavBar from './Navbar.jsx'
 import Listview from './Listview.jsx'
+import Signintabs from './Signintabs.jsx'
 
 export default class Index extends Component{
 
@@ -24,6 +25,8 @@ export default class Index extends Component{
             return <div><Listview switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} /></div>
         } else if (this.state.page == "Event"){
             return <EventDetails  event={this.state.event}/> 
+        } else if (this.state.page == "Login"){
+            return <Signintabs/>
         }
 
         return <Exp switchToMap={this.switchToMap.bind(this)} switchToList={this.switchToList.bind(this)}/>;
@@ -41,6 +44,9 @@ export default class Index extends Component{
     switchToList = () => {
         this.setState({page: "List"});
     }
+    switchToLogin = () => {
+        this.setState({page: "Login"})
+    }
 
     switchToEvent = (e) => {
         this.setState({page: "Event", event: e});
@@ -55,6 +61,7 @@ export default class Index extends Component{
                     switchToHome={this.switchToHome.bind(this)} 
                     switchToList={this.switchToList.bind(this)} 
                     switchToMap={this.switchToMap.bind(this)} 
+                    switchToLogin={this.switchToLogin.bind(this)}
                 />
                 {this.whichPage()}
             </div>

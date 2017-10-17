@@ -44,6 +44,7 @@ class AppBarExampleIconButton extends Component {
      <div>
        <FlatButton label="List View" style={buttonStyle} onClick={this.props.switchToList} />
        <FlatButton label="Map View" style={buttonStyle} onClick={this.props.switchToMap} />
+       <FlatButton label="Sign-in/Register" style={buttonStyle} onClick={this.props.switchToLogin} />
      </div>
     );
 
