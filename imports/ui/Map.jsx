@@ -18,14 +18,16 @@ export class MapContainer extends Component {
         markers = [];
         for (i = 0; i < events.length; i++){
             console.log(events[i].location);
-            markers.push(<Marker key={i} position={{ lat: events[i].location[0], lng: events[i].location[1] }} onClick={this.props.switchToEvent.bind(this, events[i])} />)
+            markers.push(<Marker key={i}
+              position={{ lat: events[i].location[0], lng: events[i].location[1] }}
+              title={events[i].name+':\n'+events[i].type+'\n\nClick for more details'}
+              onClick={this.props.switchToEvent.bind(this, events[i])} />)
         }
         console.log(markers);
         return markers;
     }
 
     render(){
-
         const style = {
             width: '100vw',
             height: '100vh'

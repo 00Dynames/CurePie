@@ -38,6 +38,30 @@ class Popup extends Component {
     }
 }
 
+class Help_Popup extends Component {
+    state = {
+      showDiv: true,
+    }
+    render() {
+      const { showDiv } = this.state
+      return (
+        <div>
+          { showDiv && (
+            <div id="help-popup">
+              <button className="closebtn" onClick={() => this.setState({ showDiv: !showDiv })}>X</button>
+              <p>How can you help?</p>
+              <ol>
+                <li>Find a charity you would like to support</li>
+                <li>Select the amount you would like to donate</li>
+                <li>Select the donate button to finalise your donation</li>
+              </ol>
+            </div>
+          )}
+        </div>
+      )
+    }
+}
+
 class Info extends Popup {
 
     getNewsArticles = () => {
@@ -74,7 +98,7 @@ class Info extends Popup {
             <div id='details-container'>
                 <div className="panel-container">
                     <div className="panel-image"></div>
-                    <Summary 
+                    <Summary
                         date={this.props.event.date}
                         location={this.props.event.location}
                         affected={this.props.event.affected}
@@ -84,10 +108,10 @@ class Info extends Popup {
                 <div className="info-block">
                     <div className="info-heading">What's happening</div>
                     <p>
-                        {this.props.event.description} 
+                        {this.props.event.description}
                     </p>
                     <div className="info-heading">News Articles</div>
-                    <ul>    
+                    <ul>
                         {this.getNewsArticles().map((article) => (article))}
                         {this.getNews(this.props.event.name).map((article) => (article))}
                     </ul>
@@ -95,11 +119,11 @@ class Info extends Popup {
                 </div>
             </div>
         );
-    } 
+    }
 }
 
 class Summary extends Component {
-  
+
     render() {
         return (
             <table id='summary-table'>
@@ -213,6 +237,7 @@ class EventDetails extends Component {
             <div>
                 <Popup name={this.props.event.name} />
                 <Info loggedIn={this.props.loggedIn} event={this.props.event} />
+                <Help_Popup />
                 <Footer />
             </div>
         )
@@ -224,9 +249,8 @@ EventDetails.propTypes = {
 };
 
 export default createContainer(() => {
+
     return {
         events: Events.find({}).fetch(),
     };
 }, EventDetails);
-
-

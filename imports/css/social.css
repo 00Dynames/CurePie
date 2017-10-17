@@ -1,0 +1,37 @@
+#social-bar {
+	position: fixed;
+	top:300px;
+	right:0px;
+	z-index:2;
+	width:50px;
+	background-color:#212121;
+}
+.social-container {
+	padding-top:20px;
+	justify-content:center;
+	align-items:center;
+}
+
+.social-single {
+	height:55px;
+	width:50px;
+	align-items:center;
+	position:relative;
+}
+
+.social-btn {
+	position:absolute;
+	z-index: 1;
+	left:9px;
+}
+
+
+.social-count {
+	position:absolute;
+	z-index: 0;
+	top:28px;
+	width:100%;
+	font-size:0.6em;
+	color:white;
+	text-align:center !important;
+}
