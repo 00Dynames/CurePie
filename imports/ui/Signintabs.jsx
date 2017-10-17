@@ -6,6 +6,7 @@ import * as Colors from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
 const styles = {
   headline: {
@@ -39,6 +40,9 @@ const Signintabs = () => (
           <TextField hintText="Your Email"/>
           <br/>
           <TextField hintText="Password" type="password"/>
+          <br/>
+          <br/>
+          <RaisedButton label="Sign-in" primary={true}/>
         </div>
       </Tab>
       <Tab label="Register" >
@@ -49,6 +53,9 @@ const Signintabs = () => (
           <TextField hintText="Password" type="password"/>
           <br/>
           <TextField hintText="Confirm Password" type="password"/>
+          <br/>
+          <br/>
+          <RaisedButton label="Register" primary={true}/>
         </div>
       </Tab>
     </Tabs>
