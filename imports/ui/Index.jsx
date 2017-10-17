@@ -60,17 +60,10 @@ export default class Index extends Component{
         console.log(this.state);
         return(
             <div>
-<<<<<<< HEAD
                 <AppBarExampleIconButton 
                     switchToHome={this.switchToHome.bind(this)} 
                     switchToList={this.switchToList.bind(this)} 
                     switchToMap={this.switchToMap.bind(this)} 
-=======
-                <AppBarExampleIconButton
-                    switchToHome={this.switchToHome.bind(this)}
-                    switchToList={this.switchToList.bind(this)}
-                    switchToMap={this.switchToMap.bind(this)}
->>>>>>> 54f9b78421347f8558cc02256e4d9e4f0c2b9f6c
                     switchToLogin={this.switchToLogin.bind(this)}
                 />
                 {this.whichPage()}

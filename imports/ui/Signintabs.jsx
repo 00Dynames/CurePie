@@ -15,7 +15,7 @@ const styles = {
     fontWeight: 400,
   },
   signin: {
-    align: center
+    textAlign: "center"
   },
 };
 
@@ -42,11 +42,13 @@ const Signintabs = () => (
         </div>
       </Tab>
       <Tab label="Register" >
-        <div>
+        <div style={styles.signin}>
           <h2 style={styles.headline}>Register</h2>
-          <p>
-            This is another example tab.
-          </p>
+          <TextField hintText="Your Email"/>
+          <br/>
+          <TextField hintText="Password" type="password"/>
+          <br/>
+          <TextField hintText="Confirm Password" type="password"/>
         </div>
       </Tab>
     </Tabs>
