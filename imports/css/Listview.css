@@ -15,12 +15,14 @@ html, body {
 .page-header {
 	/*padding:2% 0;*/
 	line-height:4em;
+	background-color:black;
 }
 .event-title {
   text-transform: uppercase;
-  font-size: 2em;
+	letter-spacing:0.4em;
+  font-size: 1.6em;
   text-align: center;
-  color: black;
+  color: white;
 }
 
 /*********************/
@@ -114,4 +116,15 @@ html, body {
 		}
 		.color {
 			color:#00897B;
+		}
+
+		.tags {
+			/*width:90%;*/
+			/*background-color:blue;*/
+			word-wrap:break-word;
+			margin: 10px 30px;
+		}
+		.tag:hover {
+			text-decoration: underline;
+			cursor:pointer;
 		}

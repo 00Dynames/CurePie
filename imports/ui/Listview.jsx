@@ -32,7 +32,8 @@ class Heading extends Component {
     render() {
         return (
             <div className="page-header" id='page-header'>
-                <div className="event-title font3">Where you can make a difference</div>
+                <div className="event-title font1">Where you can make a difference</div>
+								<div className="green-line"></div>
                 <MuiThemeProvider>
                     <Divider />
                 </MuiThemeProvider>
@@ -45,15 +46,16 @@ class Listview extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {sortval: 'name', searchval:''};
+
 		this.handleSearch = this.handleSearch.bind(this);
 		this.keyPress = this.keyPress.bind(this);
-		var sort = {};
+		this.sortResults = this.sortResults.bind(this, this.state.sortval);
+		this.handleTag = this.handleTag.bind(this);
 	}
 
 	handleSearch = (event) => {
 		this.setState({ searchval: event.target.value });
 	}
-
 	keyPress(e){
 			if(e.keyCode == 13){
 				 console.log('SEARCHING FOR:', e.target.value);
@@ -61,15 +63,29 @@ class Listview extends Component {
 	 }
 
 	sortResults = (event, index, value) => {
-		console.log(value);
-		this.setState({sortval:value});
-		this.sort[value] = 1;
-		console.log(this.sort[value]);
+		this.setState({ sortval : value });
+		this.state.sortval = value;
+		console.log(value + ' ' + this.state.sortval + ' ' + event)
 	}
 
+	handleTag = (event) => {
+		this.setState( {searchval: event })
+	}
 
     getEvents = () => {
-				events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: this.sort }).fetch();
+				// events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: this.sort }).fetch();
+				if (this.state.sortval == 1) {
+					events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: { 'location' : 1 } }).fetch();
+				}
+				else if (this.state.sortval == 2) {
+					events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: { 'date' : 1 } }).fetch();
+				}
+				else if (this.state.sortval == 3) {
+					events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: { 'affected' : -1 } }).fetch();
+				}
+				else {
+					events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: { 'name' : 1 } }).fetch();
+				}
 				result = [];
         for (i = 0; i < events.length; i++){
             result.push(
@@ -106,9 +122,32 @@ class Listview extends Component {
 													value={this.state.searchval}
 													onKeyDown={this.keyPress}
 													onChange={this.handleSearch}/>
-												<div className='font3 sidebar-label'>view trending:</div>
-													insert tags here i guess
-												<br />
+												<br /><br />
+												<div className='font3'>
+													VIEW TRENDING:
+													<div className='tags'>
+														<a className='tag color'
+															value={'earthquake'}
+															onClick={() => this.handleTag('earthquake')}
+															>#earthquake</a>
+														<a className='tag color'
+															value={'earthquake'}
+															onClick={() => this.handleTag('earthquake')}
+															>#earthquake</a>
+														<a className='tag color'
+															value={'earthquake'}
+															onClick={() => this.handleTag('earthquake')}
+															>#earthquake</a>
+														<a className='tag color'
+															value={'earthquake'}
+															onClick={() => this.handleTag('earthquake')}
+															>#earthquake</a>
+														<a className='tag color'
+															value={'earthquake'}
+															onClick={() => this.handleTag('earthquake')}
+															>#earthquake</a>
+													</div>
+												</div>
 												<div className='font3 sidebar-label'>Sort by:</div>
 												<DropDownMenu
 													value={this.state.sortval}
