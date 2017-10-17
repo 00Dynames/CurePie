@@ -7,6 +7,10 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import RaisedButton from 'material-ui/RaisedButton';
+
 
 
 function handleTouchTap() {
@@ -33,6 +37,28 @@ const muiTheme = getMuiTheme({
 
 
 class AppBarExampleIconButton extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {open: false};
+    this.clickLogin = this.clickLogin.bind(this);
+    this.clickHome = this.clickHome.bind(this);
+  }
+
+  handleToggle = () => this.setState({open: !this.state.open});
+
+  handleClose = () => this.setState({open: false});
+
+  clickHome() {
+    this.props.switchToHome();
+    this.handleClose();
+  }
+
+  clickLogin() {
+    this.props.switchToLogin();
+    this.handleClose();
+  }
+
 	render() {
 
     const buttonStyle = {
@@ -44,20 +70,36 @@ class AppBarExampleIconButton extends Component {
 
     const rightButtons = (
      <div>
-       <FlatButton label="List View" style={buttonStyle} onClick={this.props.switchToList}/>
-       <FlatButton className='font1' label="Map View" style={buttonStyle} onClick={this.props.switchToMap} />
+       <FlatButton label="List View" style={buttonStyle} onClick={this.props.switchToList} />
+       <FlatButton label="Map View" style={buttonStyle} onClick={this.props.switchToMap} />
+       <FlatButton label="Sign-in/Register" style={buttonStyle} onClick={this.props.switchToLogin} />
      </div>
     );
 
 		return (
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <AppBar
+      <div>
+        <MuiThemeProvider muiTheme={muiTheme}>
+          <AppBar
           title={<span style={styles.title} className="font1"><img style={ {width:40, height:40, position:'relative', top:10} } src='/images/bridge1-white.png'></img>&ensp;THE BRIDGE PROJECT</span>}
-          onTitleTouchTap={this.props.switchToHome}
-          iconElementLeft={<div> </div>}
-          iconElementRight={rightButtons}
-        />
-      </MuiThemeProvider>
+            onLeftIconButtonTouchTap={this.handleToggle}
+            iconElementRight={rightButtons}
+            onTitleTouchTap={this.props.switchToHome}
+          />
+        </MuiThemeProvider>
+        <MuiThemeProvider>
+          <Drawer
+            docked={false}
+            width={300}
+            open={this.state.open}
+            onRequestChange={(open) => this.setState({open})}
+          >
+            <h1>Logged In As: GUEST</h1>
+            <MenuItem onClick={this.clickHome}>Home</MenuItem>
+            <MenuItem onClick={this.clickLogin}>Login</MenuItem>
+          </Drawer>
+        </MuiThemeProvider>
+      </div>
+
     )
 
   }

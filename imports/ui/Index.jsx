@@ -2,11 +2,11 @@ import React, { Component, PropTypes } from 'react';
 
 import Exp from './landingpg.jsx';
 import MapContainer from './Map.jsx';
-import List from './List.jsx';
 import AppBarExampleIconButton from './Navbar.jsx'
 import EventDetails from './event_details.jsx'
 import NavBar from './Navbar.jsx'
 import Listview from './Listview.jsx'
+import Signintabs from './Signintabs.jsx'
 
 export default class Index extends Component{
 
@@ -19,14 +19,16 @@ export default class Index extends Component{
     whichPage = (props) => {
 
         if(this.state.page == "Map"){
-            return <MapContainer  switchToEvent={this.switchToEvent.bind(this)} switchToList={this.switchToList.bind(this)} />
+            return <MapContainer  switchToEvent={this.switchToEvent.bind(this)} switchToList={this.switchToList.bind(this)} switchToLogin={this.switchToLogin.bind(this)} />
         } else if (this.state.page == "List"){
-            return <div><Listview switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} /></div>
+            return <Listview switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} switchToLogin={this.switchToLogin.bind(this)} />
         } else if (this.state.page == "Event"){
             return <EventDetails  event={this.state.event}/> 
+        } else if (this.state.page == "Login"){
+            return <Signintabs/>
         }
 
-        return <Exp switchToMap={this.switchToMap.bind(this)} switchToList={this.switchToList.bind(this)}/>;
+        return <Exp switchToMap={this.switchToMap.bind(this)} switchToList={this.switchToList.bind(this)} />;
     }
 
     // Component switching functions
@@ -40,6 +42,13 @@ export default class Index extends Component{
 
     switchToList = () => {
         this.setState({page: "List"});
+    }
+    switchToLogin = () => {
+        this.setState({page: "Login"})
+    }
+
+    switchToLogin = () => {
+        this.setState({page: "Login"});
     }
 
     switchToEvent = (e) => {
@@ -55,6 +64,7 @@ export default class Index extends Component{
                     switchToHome={this.switchToHome.bind(this)} 
                     switchToList={this.switchToList.bind(this)} 
                     switchToMap={this.switchToMap.bind(this)} 
+                    switchToLogin={this.switchToLogin.bind(this)}
                 />
                 {this.whichPage()}
             </div>
