@@ -5,6 +5,13 @@ Meteor.startup(() => {
   // code to run on server at startup
 });
 
-// prints result of api call to local terminal, using wikipedia as example
-console.log(HTTP.call('GET', 'https://en.wikipedia.org/w/api.php?action=query&titles=Hurricane_Irma&format=json'));
+Meteor.methods({
+    getNews(topic){
+        console.log(topic);
+        console.log('https://content.guardianapis.com/search?q=' + topic + '&api-key=9f    7ca280-268f-4acc-ae47-3b88795b9e58');
+        result = HTTP.call('GET', 'https://content.guardianapis.com/search?q=' + topic + '&api-key=9f7ca280-268f-4acc-ae47-3b88795b9e58');
+        //console.log(result);
+        return result.data.response.results;
+    }
+});
 
