@@ -19,6 +19,7 @@ import { Events } from '../api/events.js';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Session } from 'meteor/session';
 import DonationDialogue from './donateDialogue.jsx';
+import SocialBar from './social.jsx'
 
 const style = {
     margin: 12,
@@ -234,6 +235,7 @@ class EventDetails extends Component {
         console.log(this.props.event);
         return (
             <div>
+                <SocialBar />
                 <Popup name={this.props.event.name} />
                 <Help_Popup />
                 <Info loggedIn={this.props.loggedIn} event={this.props.event} />
