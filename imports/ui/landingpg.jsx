@@ -142,7 +142,8 @@ class Footer extends Component {
 		return (
 			<div>
 				<div className="green-line"></div>
-				<div id='footer-container'>
+				<div id='footer-container' className='font3	'>
+					The Bridge Project (c) 2017<br />
 				</div>
 			</div>
 		);

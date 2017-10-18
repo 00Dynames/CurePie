@@ -34,9 +34,6 @@ class Heading extends Component {
             <div className="page-header" id='page-header'>
                 <div className="event-title font1">Where you can make a difference</div>
 								<div className="green-line"></div>
-                <MuiThemeProvider>
-                    <Divider />
-                </MuiThemeProvider>
             </div>
         );
     }

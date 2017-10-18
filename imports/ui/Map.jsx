@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { HTTP } from 'meteor/http';
+import Heading from './Listview.jsx';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -33,12 +34,15 @@ export class MapContainer extends Component {
         }
 
         return (
-            <div style={style}>
-                <Map google={this.props.google} defaultCenter={{ lat: -34.397, lng: 150.644 }} zoom={3} >
-                    {this.getEvents().map((event) => (event))}
-                </Map>
+						<div id='map-pg-container'>
+							<Heading />
+	            <div style={style}>
+	                <Map google={this.props.google} defaultCenter={{ lat: -34.397, lng: 150.644 }} zoom={3} >
+	                    {this.getEvents().map((event) => (event))}
+	                </Map>
 
-            </div>
+	            </div>
+						</div>
         );
     }
 }
