@@ -55,6 +55,9 @@ export default class Index extends Component{
     login = () => {
         this.setState({page: "Home", loggedIn: true, user: "Alice"})
     }
+    logout = () => {
+        this.setState({page: "Home", loggedIn: false, user: ' '})
+    }
 
     switchToEvent = (e) => {
         this.setState({page: "Event", event: e});
@@ -71,6 +74,7 @@ export default class Index extends Component{
                     switchToMap={this.switchToMap.bind(this)}
                     switchToLogin={this.switchToLogin.bind(this)}
                     user={this.state.loggedIn ? this.state.user : ''}
+                    logout={this.logout.bind(this)}
                 />
                 {this.whichPage()}
             </div>

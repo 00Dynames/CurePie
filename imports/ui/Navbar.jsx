@@ -79,7 +79,7 @@ class AppBarExampleIconButton extends Component {
         anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
         targetOrigin={{horizontal: 'right', vertical: 'bottom'}}
         >
-          <MenuItem primaryText="Sign out" />
+          <MenuItem primaryText="Sign out" onClick={this.props.logout} />
         </IconMenu>
     }
     const rightButtons = (
