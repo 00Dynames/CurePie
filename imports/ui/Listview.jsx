@@ -28,6 +28,7 @@ const paperstyle = {
 const green = {
 	color: teal600,
 };
+
 class Heading extends Component {
     render() {
         return (
@@ -111,43 +112,42 @@ class Listview extends Component {
         return (
             <div id='event-body-container' className='font2'>
                 <div className= "sidebar">
-									<div className='sidebar-container font3'>
-
-										<MuiThemeProvider>
-											<Paper style={paperstyle} zDepth={3} className='sidebar-paper'>
-												<TextField
-													hintText="Search by keyword"
-													className='search-bar'
-													value={this.state.searchval}
-													onKeyDown={this.keyPress}
-													onChange={this.handleSearch}/>
-												<br /><br />
-												<div className='font3'>
-													VIEW TRENDING:
-													<div className='tags'>
-														<a className='tag color'
-															value={'irma'}
-															onClick={() => this.handleTag('irma')}
-															>#hurricaneirma</a>
-														<a className='tag color'
-															value={'us'}
-															onClick={() => this.handleTag('us')}
-															>#usa</a>
-														<a className='tag color'
-															value={'volunteer'}
-															onClick={() => this.handleTag('volunteer')}
-															>#volunteering</a>
-														<a className='tag color'
-															value={'apocalypse'}
-															onClick={() => this.handleTag('apocalypse')}
-															>#apocalypse2017</a>
-														<a className='tag color'
-															value={'earthquake'}
-															onClick={() => this.handleTag('earthquake')}
-															>#earthquake</a>
-													</div>
-												</div>
-												<div className='font3 sidebar-label'>Sort by:</div>
+					<div className='sidebar-container font3'>
+						<MuiThemeProvider>
+						    <Paper style={paperstyle} zDepth={3} className='sidebar-paper'>
+							    <TextField
+								    hintText="Search by keyword"
+									className='search-bar'
+									value={this.state.searchval}
+									onKeyDown={this.keyPress}
+									onChange={this.handleSearch}/>
+									<br /><br />
+									<div className='font3'>
+									VIEW TRENDING:
+									<div className='tags'>
+									    <a className='tag color'
+										    value={'irma'}
+											onClick={() => this.handleTag('irma')}
+										>#hurricaneirma</a>
+										<a className='tag color'
+										    value={'us'}
+											onClick={() => this.handleTag('us')}
+										>#usa</a>
+										<a className='tag color'
+											value={'volunteer'}
+											onClick={() => this.handleTag('volunteer')}
+										>#volunteering</a>
+										<a className='tag color'
+											value={'apocalypse'}
+											onClick={() => this.handleTag('apocalypse')}
+                                        >#apocalypse2017</a>
+										<a className='tag color'
+											value={'earthquake'}
+											onClick={() => this.handleTag('earthquake')}
+                                        >#earthquake</a>
+                                    </div>
+								</div>
+                                <div className='font3 sidebar-label'>Sort by:</div>
 												<DropDownMenu
 													value={this.state.sortval}
 													onChange={this.sortResults}
@@ -176,6 +176,7 @@ class Listview extends Component {
 
 export default class DescriptionBox extends Component {
     render() {
+        console.log(this.props);
         return (
             <div id='page-container'>
                 <Heading />

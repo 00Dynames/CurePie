@@ -2,11 +2,22 @@ import React, { Component, PropTypes } from 'react';
 import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { HTTP } from 'meteor/http';
-import Heading from './Listview.jsx';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Events } from '../api/events.js';
+
+class Heading extends Component {
+    render() {
+        return (
+            <div className="page-header" id='page-header'>
+                <div className="event-title font1">Where you can make a difference</div>
+                <div className="green-line"></div>
+            </div>
+        );
+    }
+}
+
 
 export class MapContainer extends Component {
 
