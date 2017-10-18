@@ -5,6 +5,7 @@
 How to run
 ==========
 $ meteor
+// See imports/api/events.js for instructions on populating the sample database
 
 Packages
 ========
@@ -16,6 +17,7 @@ meteor npm install --save google-maps-react
 meteor npm install --save react-addons-pure-render-mixin
 meteor add react-meteor-data
 meteor npm i --save material-ui-search-bar
+meteor npm install --save request
 meteor npm install --save react-share
 meteor npm install --save meteor-node-stubs
 meteor npm install --save core-js
@@ -25,6 +27,7 @@ meteor npm install --save apeman-react-slideshow
 API Keys
 =========
 GMaps -> AIzaSyDxI0mCeLq2o0YTatFKIRY2IE9n9ttuQOo
+The guardian -> 9f7ca280-268f-4acc-ae47-3b88795b9e58
 
 # Database setup
 
@@ -45,4 +48,3 @@ db.events.insert({name: 'Hurricane Irma', date: '30th September 2017', location:
 db.events.insert({name: 'Colombia Landslide', date: '1st April 2017', location: [ 1.152233, -76.650947 ], affected: '329 confirmed', news: ['https://www.theguardian.com/world/2017/apr/01/colombia-landslide-mocoa-putumayo-heavy-rains', 'http://www.bbc.com/news/world-latin-america-39470238', 'http://www.bbc.com/news/world-latin-america-39510721', 'http://www.abc.net.au/news/2017-04-02/colombia-landslide-leaves-more-than-100-dead/8408392', 'http://www.abc.net.au/news/2017-04-03/grim-search-resumes-in-colombia-after-deadly-flood/8409604'], description: 'The Mocoa landslide was a natural disaster that took place in 2017. During the pre-dawn hours of 1 April 2017, locally heavy rain triggered flash flooding and landslides in the city of Mocoa, Putumayo, Colombia, killing at least 329 people, injuring 332, and leaving 70 others missing. It is the third-deadliest weather-related disaster in Colombian history, and is regarded as the worst catastrophe in the history of Mocoa', charities: [{name: 'WORLD VISION', url: 'https://donate.worldvision.org/ways-to-give/disaster-relief/disaster-relief-fund', description: 'Addressing the need for clean water, hygiene and support for children’s protection, psychosocial health and return to education'}, {name: 'COLOMBIAN RED CROSS', url: 'https://www.zonapagos.com/t_cruzr/pagos.asp', description: 'sending teams of rescuers throughout the city to locate remains, rescue survivors and deliver medicine and essential supplies'}, {name: 'UNICEF LATIN AMERICA', url: 'https://www.unicef.org.co/emergencia/avalancha-putumayo'}, {name: 'MERCY CORPS', url: 'https://www.mercycorps.org/donate', description: 'Ongoing recovery efforts'}]});
 ```
 
----
