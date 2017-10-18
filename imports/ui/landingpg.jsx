@@ -27,7 +27,7 @@ class Open extends Component {
 		return (
 			<div className="title-bg">
 
-					<div className="font1 headings title-text"><img src='/images/bridge.png' className='title-img'></img>
+					<div className="font1 headings title-text"><img src='/images/bridge1-white.png' className='title-img'></img>
 					<br></br>
 					The Bridge Project</div>
 						<div id="search-bar-container">
@@ -94,7 +94,7 @@ class About extends Component {
 			<div className='text-container'>
 				<div>
 					<div className="font1 headings">What we Do</div>
-					<p className='font2'>Lorem ipsum dolor sit amet, pri an option persius appetere, ex iriure aperiam necessitatibus nec. Debet deterruisset necessitatibus pro id, per in congue possim pericula, tota mutat labore nec eu. Ea laudem offendit eloquentiam vel, saepe pertinax ei ius. Ut tollit gubergren pri, vide lorem suscipit ne vim, doctus dignissim usu in.
+					<p className='font2 about-text'>Lorem ipsum dolor sit amet, pri an option persius appetere, ex iriure aperiam necessitatibus nec. Debet deterruisset necessitatibus pro id, per in congue possim pericula, tota mutat labore nec eu. Ea laudem offendit eloquentiam vel, saepe pertinax ei ius. Ut tollit gubergren pri, vide lorem suscipit ne vim, doctus dignissim usu in.
 					<br></br><br></br>
 					Tollit vocibus pertinax ea duo, quo wisi graece nostrud ad. Falli iracundia pro ei, et vocent laboramus mnesarchum eum. At dicant audiam efficiantur eos, has iracundia euripidis abhorreant cu, an prompta placerat vix. Habemus minimum convenire sit ex. Eu sit nulla ridens quaeque, ad nec eruditi intellegebat.</p>
 				</div>
@@ -111,7 +111,7 @@ class Filler extends Component {
 				<div className='filler-item' id='slogan-container'>
 					<Slides />possible slideshow here!!!
       	</div>
-			<div className='filler-item'id='slogan'>
+			<div className='filler-item font3'id='slogan'>
 				Find<br></br>Your<br></br>Cause</div>
 			</div>
 		);
@@ -129,7 +129,7 @@ class Team extends Component {
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Mahika Suri</div></div>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Dennis Bunadi</div></div>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Jacqueline Lee</div></div>
-						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Vivian Dang</div></div>
+						<div className='team-item'><img className="team-img" src='/images/vivian.jpg'/><div>Vivian Dang</div></div>
 						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Christine Bui</div></div>
 					</div>
 				</div>

@@ -32,7 +32,8 @@ class Heading extends Component {
     render() {
         return (
             <div className="page-header" id='page-header'>
-                <div className="event-title font3">Where you can make a difference</div>
+                <div className="event-title font1">Where you can make a difference</div>
+								<div className="green-line"></div>
                 <MuiThemeProvider>
                     <Divider />
                 </MuiThemeProvider>
@@ -44,28 +45,49 @@ class Heading extends Component {
 class Listview extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {value: 1, searchval:''};
+		this.state = {sortval: 'name', searchval:''};
+
 		this.handleSearch = this.handleSearch.bind(this);
 		this.keyPress = this.keyPress.bind(this);
+		this.sortResults = this.sortResults.bind(this, this.state.sortval);
+		this.handleTag = this.handleTag.bind(this);
 	}
 
 	handleSearch = (event) => {
 		this.setState({ searchval: event.target.value });
 	}
-
 	keyPress(e){
 			if(e.keyCode == 13){
 				 console.log('SEARCHING FOR:', e.target.value);
 			}
 	 }
 
-	handleChange = (event, index, value) => this.setState({value});
+	sortResults = (event, index, value) => {
+		this.setState({ sortval : value });
+		this.state.sortval = value;
+		console.log(value + ' ' + this.state.sortval + ' ' + event)
+	}
+
+	handleTag = (event) => {
+		this.setState( {searchval: event })
+	}
+
     getEvents = () => {
 
-        subscription = Meteor.subscribe('events');
-        events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"} }).fetch();
-
-        result = [];
+				// events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: this.sort }).fetch();
+				if (this.state.sortval == 1) {
+					events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: { 'location' : 1 } }).fetch();
+				}
+				else if (this.state.sortval == 2) {
+					events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: { 'date' : 1 } }).fetch();
+				}
+				else if (this.state.sortval == 3) {
+					events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: { 'affected' : -1 } }).fetch();
+				}
+				else {
+					events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: { 'name' : 1 } }).fetch();
+				}
+				result = [];
         for (i = 0; i < events.length; i++){
             result.push(
                 <div className="single-event">
@@ -76,7 +98,9 @@ class Listview extends Component {
 	                    <div>{events[i].description.slice(0,500)}...</div>
 	                    <div className="single-event-info">
 												<strong className='color'>Type</strong>: {events[i].type}&emsp;
-												<strong className='color'>Location</strong>: {events[i].location}</div>
+												<strong className='color'>Location</strong>: {events[i].location}&emsp;
+												<strong className='color'>Date</strong>: {events[i].date}
+											</div>
 										</div>
 								</div>
             )
@@ -99,20 +123,44 @@ class Listview extends Component {
 													value={this.state.searchval}
 													onKeyDown={this.keyPress}
 													onChange={this.handleSearch}/>
-												<div className='font3 sidebar-label'>view trending:</div>
-													insert tags here i guess
-												<br />
+												<br /><br />
+												<div className='font3'>
+													VIEW TRENDING:
+													<div className='tags'>
+														<a className='tag color'
+															value={'earthquake'}
+															onClick={() => this.handleTag('earthquake')}
+															>#earthquake</a>
+														<a className='tag color'
+															value={'earthquake'}
+															onClick={() => this.handleTag('earthquake')}
+															>#earthquake</a>
+														<a className='tag color'
+															value={'earthquake'}
+															onClick={() => this.handleTag('earthquake')}
+															>#earthquake</a>
+														<a className='tag color'
+															value={'earthquake'}
+															onClick={() => this.handleTag('earthquake')}
+															>#earthquake</a>
+														<a className='tag color'
+															value={'earthquake'}
+															onClick={() => this.handleTag('earthquake')}
+															>#earthquake</a>
+													</div>
+												</div>
 												<div className='font3 sidebar-label'>Sort by:</div>
 												<DropDownMenu
-													value={this.state.value}
-													onChange={this.handleChange}
+													value={this.state.sortval}
+													onChange={this.sortResults}
 													className='sidebar-dropdown'
 													selectedMenuItemStyle={ {color: '#00897b'} }
 													autoWidth={false}
 													style={ {width:'100%'} }>
-									        <MenuItem value={1} primaryText="Most Recent" />
-									        <MenuItem value={2} primaryText="Most Active" />
-									        <MenuItem value={3} primaryText="Nearby" />
+									        <MenuItem value={'name'} primaryText="Alphabetical" />
+									        <MenuItem value={'date'} primaryText="Most Recent" />
+									        <MenuItem value={'affected'} primaryText="Most Active" />
+									        <MenuItem value={'location'} primaryText="Nearby" />
 									      </DropDownMenu>
 											</Paper>
 										</MuiThemeProvider>

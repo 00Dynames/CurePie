@@ -5,11 +5,11 @@ import { Session } from 'meteor/session';
 import Exp from './landingpg.jsx';
 import MapContainer from './Map.jsx';
 
-import AppBarExampleIconButton from './Navbar.jsx';
-import EventDetails from './event_details.jsx';
-import NavBar from './Navbar.jsx';
-import Listview from './Listview.jsx';
-import Login from './Dashboard.jsx'
+import AppBarExampleIconButton from './Navbar.jsx'
+import EventDetails from './event_details.jsx'
+import NavBar from './Navbar.jsx'
+import Listview from './Listview.jsx'
+import Signintabs from './Signintabs.jsx'
 
 export default class Index extends Component{
 
@@ -28,10 +28,10 @@ export default class Index extends Component{
         } else if (this.state.page == "List"){
             return <Listview switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} switchToLogin={this.switchToLogin.bind(this)} />
         } else if (this.state.page == "Event"){
-
             return <EventDetails  loggedIn={this.state.loggedIn} event={this.state.event}/> 
+
         } else if (this.state.page == "Login"){
-            return <Login switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} switchToList={this.switchToList.bind(this)} />
+            return <Signintabs/>
         }
 
         return <Exp switchToMap={this.switchToMap.bind(this)} switchToList={this.switchToList.bind(this)} />;
@@ -49,6 +49,9 @@ export default class Index extends Component{
     switchToList = () => {
         this.setState({page: "List"});
     }
+    switchToLogin = () => {
+        this.setState({page: "Login"})
+    }
 
     switchToLogin = () => {
         this.setState({page: "Login"});
@@ -64,10 +67,10 @@ export default class Index extends Component{
         //Session.set('news', []); 
         return(
             <div>
-                <AppBarExampleIconButton
-                    switchToHome={this.switchToHome.bind(this)}
-                    switchToList={this.switchToList.bind(this)}
-                    switchToMap={this.switchToMap.bind(this)}
+                <AppBarExampleIconButton 
+                    switchToHome={this.switchToHome.bind(this)} 
+                    switchToList={this.switchToList.bind(this)} 
+                    switchToMap={this.switchToMap.bind(this)} 
                     switchToLogin={this.switchToLogin.bind(this)}
                 />
                 {this.whichPage()}
