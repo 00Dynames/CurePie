@@ -70,7 +70,8 @@ class Listview extends Component {
 	}
 
     getEvents = () => {
-				// events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: this.sort }).fetch();
+        // events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: this.sort }).fetch();
+        console.log(this.props);
 				if (this.state.sortval == 1) {
 					events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: { 'location' : 1 } }).fetch();
 				}
@@ -87,7 +88,7 @@ class Listview extends Component {
         for (i = 0; i < events.length; i++){
             result.push(
                 <div className="single-event">
-										<img src='/images/fire.jpg' className='single-event-img'></img>
+										<img src='/images/fire.jpg' className='single-event-img' onClick={this.props.switchToEvent.bind(this, events[i])}></img>
 										<div className='single-event-text'>
 	                    <div className="single-event-title font3">{events[i].name}</div>
 												<hr className='title-info-divider'></hr>
@@ -106,6 +107,7 @@ class Listview extends Component {
 
 
     render() {
+        console.log(this.props);
         return (
             <div id='event-body-container' className='font2'>
                 <div className= "sidebar">
@@ -177,7 +179,7 @@ export default class DescriptionBox extends Component {
         return (
             <div id='page-container'>
                 <Heading />
-                <Listview />
+                <Listview switchToEvent={this.props.switchToEvent.bind(this)} />
             </div>
         )
     }
