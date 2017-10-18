@@ -29,7 +29,7 @@ export default class Index extends Component{
         } else if (this.state.page == "List"){
             return <Listview switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} switchToLogin={this.switchToLogin.bind(this)} />
         } else if (this.state.page == "Event"){
-            return <EventDetails  loggedIn={this.state.loggedIn} event={this.state.event}/> 
+            return <EventDetails  loggedIn={this.state.loggedIn} event={this.state.event}/>
         } else if (this.state.page == "Login"){
             return <Signintabs login={this.login.bind(this)}/>
         }
@@ -65,10 +65,10 @@ export default class Index extends Component{
         console.log(this.state);
         return(
             <div>
-                <AppBarExampleIconButton 
-                    switchToHome={this.switchToHome.bind(this)} 
-                    switchToList={this.switchToList.bind(this)} 
-                    switchToMap={this.switchToMap.bind(this)} 
+                <AppBarExampleIconButton
+                    switchToHome={this.switchToHome.bind(this)}
+                    switchToList={this.switchToList.bind(this)}
+                    switchToMap={this.switchToMap.bind(this)}
                     switchToLogin={this.switchToLogin.bind(this)}
                 />
                 {this.whichPage()}
