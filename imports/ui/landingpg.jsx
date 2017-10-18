@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import {grey100, yellow700} from 'material-ui/styles/colors';
-import SearchBar from 'material-ui-search-bar';
+import SearchBar from 'material-ui-search-bar'
 
 // MATERIAL UI THINGS
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
-
-import DonationDialogue from './donateDialogue.jsx';
 import '../css/landingpg.css'
 import SocialBar from './social.jsx'
 import {ApSlideshow, ApSlideshowStyle } from 'apeman-react-slideshow';
@@ -21,6 +19,8 @@ const styles = {
 		color: grey100,
 	},
 };
+
+
 
 class Open extends Component {
 	render() {
@@ -52,13 +52,12 @@ class Open extends Component {
                                     label="View Events"
                                     onClick={this.props.switchToList}
 								/>
-    							<RaisedButton
+							<RaisedButton
 									className="btn"
                                     label="View as Map"
                                     onClick={this.props.switchToMap}
-                                />
-                                <DonationDialogue />
-                                </div>
+								/>
+								</div>
 							</MuiThemeProvider>
 						</div>
 

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Divider from 'material-ui/Divider';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Meteor } from 'meteor/meteor';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 
 import { Events } from '../api/events.js';
+
 import { teal600 } from 'material-ui/styles/colors';
 // import './getheight.js';
 import '../css/Listview.css'
@@ -70,7 +70,6 @@ class Listview extends Component {
 	}
 
     getEvents = () => {
-
 				// events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: this.sort }).fetch();
 				if (this.state.sortval == 1) {
 					events = Events.find({"description": { $regex: '.*' + this.state.searchval + '.*', $options: "i"}}, {sort: { 'location' : 1 } }).fetch();
@@ -183,5 +182,3 @@ export default class DescriptionBox extends Component {
         )
     }
 }
-
-

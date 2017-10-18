@@ -1,10 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import { Meteor } from 'meteor/meteor';
-import { Session } from 'meteor/session';
 
 import Exp from './landingpg.jsx';
 import MapContainer from './Map.jsx';
-
 import AppBarExampleIconButton from './Navbar.jsx'
 import EventDetails from './event_details.jsx'
 import NavBar from './Navbar.jsx'
@@ -15,11 +12,9 @@ export default class Index extends Component{
 
     constructor(props){
         super(props);
-        this.state = {
-            page: "Home",
-            loggedIn: true
-        };
+        this.state = {page: "Home"};
     }
+
 
     whichPage = (props) => {
 
@@ -28,8 +23,7 @@ export default class Index extends Component{
         } else if (this.state.page == "List"){
             return <Listview switchToHome={this.switchToHome.bind(this)} switchToMap={this.switchToMap.bind(this)} switchToLogin={this.switchToLogin.bind(this)} />
         } else if (this.state.page == "Event"){
-            return <EventDetails  loggedIn={this.state.loggedIn} event={this.state.event}/> 
-
+            return <EventDetails  event={this.state.event}/> 
         } else if (this.state.page == "Login"){
             return <Signintabs/>
         }
@@ -64,7 +58,6 @@ export default class Index extends Component{
     // Render component
     render (){
         console.log(this.state);
-        //Session.set('news', []); 
         return(
             <div>
                 <AppBarExampleIconButton 

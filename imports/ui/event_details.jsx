@@ -17,8 +17,6 @@ import {
 import '../css/event_details.css'
 import { Events } from '../api/events.js';
 import { createContainer } from 'meteor/react-meteor-data';
-import { Session } from 'meteor/session';
-import DonationDialogue from './donateDialogue.jsx';
 
 const style = {
     margin: 12,
@@ -72,27 +70,6 @@ class Info extends Popup {
         return result;
     }
 
-    getNews = (topic) => {
-        subscription = Meteor.subscribe("getNews");
-        Session.setDefault('news', []);
-        Meteor.call('getNews', topic, (error, result, n) => {
-            if(error){
-                //console.log(error);
-                return false;
-            } else {
-                console.log(result);
-                Session.set('news', result);
-            }
-        });
-        news = Session.get('news');
-        result = [];
-        console.log(news);
-        for (i = 0; i < news.length; i ++){
-            result.push(<li><a href={news[i].webUrl}>{news[i].webTitle}</a></li>);
-        }
-        return result;
-    }
-
     render(){
         return (
             <div id='details-container'>
@@ -113,9 +90,8 @@ class Info extends Popup {
                     <div className="info-heading">News Articles</div>
                     <ul>
                         {this.getNewsArticles().map((article) => (article))}
-                        {this.getNews(this.props.event.name).map((article) => (article))}
                     </ul>
-                    <Charities moneyDonated={this.props.event.moneyDonated} charities={this.props.event.charities} loggedIn={this.props.loggedIn} name={this.props.event.name} />
+                    <Charities charities={this.props.event.charities} />
                 </div>
             </div>
         );
@@ -154,41 +130,14 @@ class Summary extends Component {
 
 class Charities extends Component {
 
-    donateButton = () => {
-        console.log(this.props.loggedIn);
-        if (this.props.loggedIn){
-            return (<MuiThemeProvider>
-                        <RaisedButton 
-                            className="btn"
-                            label="Donate"
-                            key={this.props.charities[i].name}
-                            onClick={this.props.switchToMap}
-                        />
-                   </MuiThemeProvider>);
-        }
-    }
-
-    donateColumn = () => {
-        if (this.props.loggedIn){
-            //return <td>{this.donateButton()}</td>;
-            return (
-                <MuiThemeProvider>
-                    <DonationDialogue name={this.props.name} />
-                </MuiThemeProvider>   
-                );
-        }
-    }
-
     getcharities = () => {
 
         result = [];
         for (i = 0; i < this.props.charities.length; i ++){
             result.push(
                 <tr>
-                    {this.donateColumn()}
                     <td><a href={this.props.charities[i].url} target = "_blank">{this.props.charities[i].name}</a></td>
                     <td>{this.props.charities[i].description}</td>
-                    <td>{this.props.moneyDonated}</td>
                 </tr>
             )
         }
@@ -197,18 +146,13 @@ class Charities extends Component {
 
 
     render() {
-
-        donateTitle = (this.props.loggedIn) ? <th></th> : "";       
-        
         return (
             <div className="Charities-block">
                 <div className="info-heading">Charities Currently Involved</div>
                 <table id="Charities-table">
                     <tr>
-                        {donateTitle}
                         <th>Name</th>
                         <th>Role</th>
-                        <th>Money donated</th>
                     </tr>
                     {this.getcharities().map((charity) => (charity))}
                 </table>
@@ -236,8 +180,8 @@ class EventDetails extends Component {
         return (
             <div>
                 <Popup name={this.props.event.name} />
-                <Info loggedIn={this.props.loggedIn} event={this.props.event} />
                 <Help_Popup />
+                <Info event={this.props.event} />
                 <Footer />
             </div>
         )

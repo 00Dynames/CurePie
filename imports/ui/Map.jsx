@@ -2,9 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { HTTP } from 'meteor/http';
-import { Meteor } from 'meteor/meteor';
-
 import Heading from './Listview.jsx';
+
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Events } from '../api/events.js';
@@ -12,10 +11,7 @@ import { Events } from '../api/events.js';
 export class MapContainer extends Component {
 
     getEvents = () => {
-        subscription = Meteor.subscribe('events');
         events = Events.find().fetch();
-        console.log(subscription);
-        console.log(events);
         markers = [];
         for (i = 0; i < events.length; i++){
             console.log(events[i].location);
@@ -24,7 +20,6 @@ export class MapContainer extends Component {
               title={events[i].name+':\n'+events[i].type+'\n\nClick for more details'}
               onClick={this.props.switchToEvent.bind(this, events[i])} />)
         }
-        console.log(markers);
         return markers;
     }
 
@@ -37,7 +32,7 @@ export class MapContainer extends Component {
         if (!this.props.loaded) {
             return <div>Loading...</div>
         }
-        console.log("MAP");
+
         return (
 						<div id='map-pg-container'>
 							<Heading />
