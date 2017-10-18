@@ -127,21 +127,21 @@ class Listview extends Component {
 													VIEW TRENDING:
 													<div className='tags'>
 														<a className='tag color'
-															value={'earthquake'}
-															onClick={() => this.handleTag('earthquake')}
-															>#earthquake</a>
+															value={'irma'}
+															onClick={() => this.handleTag('irma')}
+															>#hurricaneirma</a>
 														<a className='tag color'
-															value={'earthquake'}
-															onClick={() => this.handleTag('earthquake')}
-															>#earthquake</a>
+															value={'us'}
+															onClick={() => this.handleTag('us')}
+															>#usa</a>
 														<a className='tag color'
-															value={'earthquake'}
-															onClick={() => this.handleTag('earthquake')}
-															>#earthquake</a>
+															value={'volunteer'}
+															onClick={() => this.handleTag('volunteer')}
+															>#volunteering</a>
 														<a className='tag color'
-															value={'earthquake'}
-															onClick={() => this.handleTag('earthquake')}
-															>#earthquake</a>
+															value={'apocalypse'}
+															onClick={() => this.handleTag('apocalypse')}
+															>#apocalypse2017</a>
 														<a className='tag color'
 															value={'earthquake'}
 															onClick={() => this.handleTag('earthquake')}
