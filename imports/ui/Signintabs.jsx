@@ -37,25 +37,25 @@ const Signintabs = () => (
       <Tab label="Sign-In" >
         <div style={styles.signin}>
           <h2 style={styles.headline}>Sign-In</h2>
-          <TextField hintText="Your Email"/>
+          <TextField hintText="Username"/>
           <br/>
           <TextField hintText="Password" type="password"/>
           <br/>
           <br/>
-          <RaisedButton label="Sign-in" primary={true}/>
+          <RaisedButton label="Sign-in" primary={true} onClick={this.login}/>
         </div>
       </Tab>
       <Tab label="Register" >
         <div style={styles.signin}>
           <h2 style={styles.headline}>Register</h2>
-          <TextField hintText="Your Email"/>
+          <TextField hintText="Username"/>
           <br/>
           <TextField hintText="Password" type="password"/>
           <br/>
           <TextField hintText="Confirm Password" type="password"/>
           <br/>
           <br/>
-          <RaisedButton label="Register" primary={true}/>
+          <RaisedButton label="Register" primary={true} onClick={this.login}/>
         </div>
       </Tab>
     </Tabs>

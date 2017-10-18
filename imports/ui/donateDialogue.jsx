@@ -5,6 +5,15 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 import TextField from 'material-ui/TextField';
 import ReactDOM from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import * as Colors from 'material-ui/styles/colors';
+
+const muiTheme = getMuiTheme({
+    palette: {
+      primary1Color: Colors.teal600,
+    },
+});
 
 export default class DonationDialogue extends Component {
     state = {open: false};
@@ -67,7 +76,6 @@ export default class DonationDialogue extends Component {
                 <TextField floatingLabelText="CCV" onChange={this.change} />  
                 <TextField floatingLabelText="Name on card" onChange={this.change} />  
                 <br />
-
             </form>
         );
     };
@@ -89,8 +97,9 @@ export default class DonationDialogue extends Component {
         ] ;
 
         return (
-            <div>
-                <RaisedButton label="Dialog" onClick={this.handleOpen} />
+            <MuiThemeProvider muiTheme={muiTheme}>
+            <td>
+                <RaisedButton label="Donate" primary={true} onClick={this.handleOpen} />
                 <Dialog
                     title={"Donate to " + this.props.name}
                     actions={actions}
@@ -101,7 +110,8 @@ export default class DonationDialogue extends Component {
                 
                 {this.donationForm()}
                 </Dialog>
-            </div>
+            </td>
+            </MuiThemeProvider>
         );
     }
 }
