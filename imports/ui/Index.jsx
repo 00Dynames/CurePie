@@ -16,7 +16,7 @@ export default class Index extends Component{
         super(props);
         this.state = {
             page: "Home",
-            loggedIn: true,
+            loggedIn: false,
             user: ""
         };
     }
@@ -31,7 +31,7 @@ export default class Index extends Component{
         } else if (this.state.page == "Event"){
             return <EventDetails  loggedIn={this.state.loggedIn} event={this.state.event}/>
         } else if (this.state.page == "Login"){
-            return <Signintabs login={this.login.bind(this)}/>
+            return Signintabs(this.login.bind(this))
         }
 
         return <Exp switchToMap={this.switchToMap.bind(this)} switchToList={this.switchToList.bind(this)} />;
@@ -70,6 +70,7 @@ export default class Index extends Component{
                     switchToList={this.switchToList.bind(this)}
                     switchToMap={this.switchToMap.bind(this)}
                     switchToLogin={this.switchToLogin.bind(this)}
+                    user={this.state.loggedIn ? this.state.user : ''}
                 />
                 {this.whichPage()}
             </div>

@@ -10,6 +10,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
+import IconMenu from 'material-ui/IconMenu';
 
 
 
@@ -67,12 +68,25 @@ class AppBarExampleIconButton extends Component {
 		 position: 'relative',
 		 top:5
     };
-
+    var loginButtonOrWelcome;
+    if (this.props.user == '') {
+      loginButtonOrWelcome = 
+        <FlatButton label="Sign-in/Register" style={buttonStyle} onClick={this.props.switchToLogin} />
+    } else {
+      loginButtonOrWelcome =
+        <IconMenu
+        iconButtonElement={<FlatButton label={"Hi "+ this.props.user} style={buttonStyle}/>}
+        anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
+        targetOrigin={{horizontal: 'right', vertical: 'bottom'}}
+        >
+          <MenuItem primaryText="Sign out" />
+        </IconMenu>
+    }
     const rightButtons = (
      <div>
        <FlatButton label="List View" style={buttonStyle} onClick={this.props.switchToList} />
        <FlatButton label="Map View" style={buttonStyle} onClick={this.props.switchToMap} />
-       <FlatButton label="Sign-in/Register" style={buttonStyle} onClick={this.props.switchToLogin} />
+       {loginButtonOrWelcome}
      </div>
     );
 

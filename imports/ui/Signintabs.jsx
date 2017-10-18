@@ -31,7 +31,7 @@ function handleActive(tab) {
   alert(`A tab with this route property ${tab.props['data-route']} was activated.`);
 }
 
-const Signintabs = () => (
+const Signintabs = (func) => (
   <MuiThemeProvider muiTheme={muiTheme}>
     <Tabs>
       <Tab label="Sign-In" >
@@ -42,7 +42,7 @@ const Signintabs = () => (
           <TextField hintText="Password" type="password"/>
           <br/>
           <br/>
-          <RaisedButton label="Sign-in" primary={true} onClick={this.login}/>
+          <RaisedButton label="Sign-in" primary={true} onClick={func}/>
         </div>
       </Tab>
       <Tab label="Register" >
@@ -55,7 +55,7 @@ const Signintabs = () => (
           <TextField hintText="Confirm Password" type="password"/>
           <br/>
           <br/>
-          <RaisedButton label="Register" primary={true} onClick={this.login}/>
+          <RaisedButton label="Register" primary={true} onClick={func}/>
         </div>
       </Tab>
     </Tabs>
