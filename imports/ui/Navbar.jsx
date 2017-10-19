@@ -44,6 +44,10 @@ class AppBarExampleIconButton extends Component {
     this.state = {open: false};
     this.clickLogin = this.clickLogin.bind(this);
     this.clickHome = this.clickHome.bind(this);
+    this.clickLogout = this.clickLogout.bind(this);
+    this.clickFavEvents = this.clickFavEvents.bind(this);
+    this.clickRecentViewed = this.clickRecentViewed.bind(this);
+    this.clickSettings = this.clickSettings.bind(this);
   }
 
   handleToggle = () => this.setState({open: !this.state.open});
@@ -54,12 +58,26 @@ class AppBarExampleIconButton extends Component {
     this.props.switchToHome();
     this.handleClose();
   }
-
   clickLogin() {
     this.props.switchToLogin();
     this.handleClose();
   }
-
+  clickLogout() {
+    this.props.logout();
+    this.handleClose();
+  }
+  clickFavEvents() {
+    this.props.switchToFavEvents();
+    this.handleClose();
+  }
+  clickRecentViewed() {
+    this.props.switchToRecentViewed();
+    this.handleClose();
+  }
+  clickSettings() {
+    this.props.switchToSettings();
+    this.handleClose();
+  }
 	render() {
 
     const buttonStyle = {
@@ -68,9 +86,10 @@ class AppBarExampleIconButton extends Component {
 		 position: 'relative',
 		 top:5
     };
+
     var loginButtonOrWelcome;
     if (this.props.user == '') {
-      loginButtonOrWelcome = 
+      loginButtonOrWelcome =
         <FlatButton label="Sign-in/Register" style={buttonStyle} onClick={this.props.switchToLogin} />
     } else {
       loginButtonOrWelcome =
@@ -82,6 +101,33 @@ class AppBarExampleIconButton extends Component {
           <MenuItem primaryText="Sign out" onClick={this.props.logout} />
         </IconMenu>
     }
+
+    var drawer;
+    if (this.props.user == '') {
+      drawer = <Drawer
+        docked={false}
+        width={300}
+        open={this.state.open}
+        onRequestChange={(open) => this.setState({open})}
+      >
+        <h1>Logged In As: GUEST</h1>
+        <MenuItem onClick={this.clickLogin}>Login</MenuItem>
+      </Drawer>
+    } else {
+      drawer = <Drawer
+        docked={false}
+        width={300}
+        open={this.state.open}
+        onRequestChange={(open) => this.setState({open})}
+      >
+        <h1>Logged In As: {this.props.user}</h1>
+        <MenuItem onClick={this.clickRecentViewed}>Recently Viewed Events</MenuItem>
+        <MenuItem onClick={this.clickFavEvents}>Favourite Events</MenuItem>
+        <MenuItem onClick={this.clickSettings}>Settings</MenuItem>
+        <MenuItem onClick={this.clickLogout}>Logout</MenuItem>
+      </Drawer>
+    }
+
     const rightButtons = (
      <div>
        <FlatButton label="List View" style={buttonStyle} onClick={this.props.switchToList} />
@@ -101,16 +147,7 @@ class AppBarExampleIconButton extends Component {
           />
         </MuiThemeProvider>
         <MuiThemeProvider>
-          <Drawer
-            docked={false}
-            width={300}
-            open={this.state.open}
-            onRequestChange={(open) => this.setState({open})}
-          >
-            <h1>Logged In As: GUEST</h1>
-            <MenuItem onClick={this.clickHome}>Home</MenuItem>
-            <MenuItem onClick={this.clickLogin}>Login</MenuItem>
-          </Drawer>
+          {drawer}
         </MuiThemeProvider>
       </div>
 

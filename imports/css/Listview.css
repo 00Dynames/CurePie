@@ -76,6 +76,14 @@ html, body {
 			overflow:scroll; overflow-x:hidden;
 		}
 
+		.fav-events-panel {
+			position: fixed;
+			width:100%;
+			max-width:100%;
+			height: calc(100vh - 140px);
+			/*border-left: thin solid lightgrey;*/
+			overflow:scroll; overflow-x:hidden;
+		}
 
 		.single-event {
 			height:200px;
