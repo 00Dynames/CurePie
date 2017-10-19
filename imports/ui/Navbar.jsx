@@ -111,7 +111,6 @@ class AppBarExampleIconButton extends Component {
         onRequestChange={(open) => this.setState({open})}
       >
         <h3>Logged In As: GUEST</h3>
-        <MenuItem onClick={this.clickLogin}>Login</MenuItem>
       </Drawer>
     } else {
       drawer = <Drawer
@@ -124,7 +123,6 @@ class AppBarExampleIconButton extends Component {
         <MenuItem onClick={this.clickRecentViewed}>Recently Viewed Events</MenuItem>
         <MenuItem onClick={this.clickFavEvents}>Favourite Events</MenuItem>
         <MenuItem onClick={this.clickSettings}>Settings</MenuItem>
-        <MenuItem onClick={this.clickLogout}>Logout</MenuItem>
       </Drawer>
     }
 

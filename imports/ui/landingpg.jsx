@@ -26,7 +26,7 @@ class Open extends Component {
 	render() {
 
     var name;
-    if (!this.props.user) {
+    if (!this.props.loggedIn) {
       name = "The Bridge Project"
     } else {
       name = "Welcome, " + this.props.user + "!"
@@ -38,19 +38,6 @@ class Open extends Component {
 					<div className="font1 headings title-text"><img src='/images/bridge1-white.png' className='title-img'></img>
 					<br></br>
 					{name}</div>
-						<div id="search-bar-container">
-							<MuiThemeProvider>
-								<SearchBar
-									onChange={() => console.log('onChange')}
-									onRequestSearch={() => console.log('onRequestSearch')}
-									hintText="SEARCH"
-									style={{
-										margin: '0 auto',
-										maxWidth: 280,
-									}}
-									/>
-							</MuiThemeProvider>
-						</div>
 						<div id="btn-container">
 							<MuiThemeProvider>
 								<div>
@@ -101,9 +88,7 @@ class About extends Component {
 			<div className='text-container'>
 				<div>
 					<div className="font1 headings">What we Do</div>
-					<p className='font2 about-text'>Lorem ipsum dolor sit amet, pri an option persius appetere, ex iriure aperiam necessitatibus nec. Debet deterruisset necessitatibus pro id, per in congue possim pericula, tota mutat labore nec eu. Ea laudem offendit eloquentiam vel, saepe pertinax ei ius. Ut tollit gubergren pri, vide lorem suscipit ne vim, doctus dignissim usu in.
-					<br></br><br></br>
-					Tollit vocibus pertinax ea duo, quo wisi graece nostrud ad. Falli iracundia pro ei, et vocent laboramus mnesarchum eum. At dicant audiam efficiantur eos, has iracundia euripidis abhorreant cu, an prompta placerat vix. Habemus minimum convenire sit ex. Eu sit nulla ridens quaeque, ad nec eruditi intellegebat.</p>
+					<p className='font2 about-text'>Here at The Bridge Project, we want to make sure that everyone in the public is well notified about the world's current humanitarian issues and crises. We believe that by doing so, we can raise awareness about important issues and encourage people to provide support where they can. In this project, we gather information from various sources, ultimately allowing everyone to make more informed decisions about where they can give their support across the globe.</p>
 				</div>
 			</div>
 		)

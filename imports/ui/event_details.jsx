@@ -173,7 +173,7 @@ class Summary extends Component {
                  open={this.state.open}
                  onRequestClose={this.handleClose}
                >
-                 Favourite Added!.
+                 Favourite Added!
                </Dialog>
              </MuiThemeProvider>
            </div>
@@ -278,7 +278,15 @@ class Footer extends Component {
 		return (
 			<div>
 				<div className="green-line"></div>
-				<div id='footer-container'>
+				<div id='footer-container' className='font3	'>
+          <div id='footer-links'>
+            <div onClick={this.props.switchToHome}>Home</div>
+            |
+            <div>About us</div>
+            |
+            <div>Sitemap</div>
+          </div>
+						&copy; The Bridge Project 2017   |   All rights reserved<br />
 				</div>
 			</div>
 		);
