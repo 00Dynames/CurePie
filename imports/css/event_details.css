@@ -92,7 +92,7 @@ li {
 .panel-image {
   width: 280px;
   height: 280px;
-  background-image: url('/images/questionMark.png');
+  background-image: url('/images/exampleImg.jpg');
 	background-size:cover;
   margin: 10px;
 }

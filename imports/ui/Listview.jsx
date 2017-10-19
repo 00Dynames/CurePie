@@ -89,7 +89,7 @@ class Listview extends Component {
         for (i = 0; i < events.length; i++){
             result.push(
                 <div className="single-event">
-										<img src='/images/questionMark.png' className='single-event-img' onClick={this.props.switchToEvent.bind(this, events[i])}></img>
+										<img src='/images/exampleImg.jpg' className='single-event-img' onClick={this.props.switchToEvent.bind(this, events[i])}></img>
 										<div className='single-event-text'>
 	                    <div className="single-event-title font3">{events[i].name}</div>
 												<hr className='title-info-divider'></hr>

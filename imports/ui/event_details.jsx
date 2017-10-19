@@ -119,8 +119,8 @@ class Info extends Popup {
                     </p>
                     <div className="info-heading">News Articles</div>
                     <ul>
+												{this.getNews(this.props.event.name).map((article) => (article))}
                         {this.getNewsArticles().map((article) => (article))}
-                        {this.getNews(this.props.event.name).map((article) => (article))}
                     </ul>
                     <Charities moneyDonated={this.props.event.moneyDonated} charities={this.props.event.charities} loggedIn={this.props.loggedIn} name={this.props.event.name} />
                 </div>
