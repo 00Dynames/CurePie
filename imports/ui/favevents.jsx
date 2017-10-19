@@ -33,7 +33,7 @@ class Heading extends Component {
     render() {
         return (
             <div className="page-header" id='page-header'>
-                <div className="event-title font1">Favourited Events</div>
+                <div className="event-title font1">Bookmarked Events</div>
 								<div className="green-line"></div>
             </div>
         );

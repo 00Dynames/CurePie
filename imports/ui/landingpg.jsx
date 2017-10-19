@@ -5,6 +5,7 @@ import SearchBar from 'material-ui-search-bar'
 // MATERIAL UI THINGS
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 
 import '../css/landingpg.css'
@@ -85,7 +86,7 @@ class Slides extends Component {
 class About extends Component {
 	render() {
 		return (
-			<div className='text-container'>
+			<div className='text-container' id='whatwedo'>
 				<div>
 					<div className="font1 headings">What we Do</div>
 					<p className='font2 about-text'>Here at The Bridge Project, we want to make sure that everyone in the public is well notified about the world's current humanitarian issues and crises. We believe that by doing so, we can raise awareness about important issues and encourage people to provide support where they can. In this project, we gather information from various sources, ultimately allowing everyone to make more informed decisions about where they can give their support across the globe.</p>
@@ -135,13 +136,18 @@ class Footer extends Component {
 		return (
 			<div>
 				<div className="green-line"></div>
-				<div id='footer-container' className='font3	'>
+				<div id='footer-container' className='font3'>
           <div id='footer-links'>
-            <div onClick={this.props.switchToList}>Home</div>
-            |
-            <div>About us</div>
-            |
-            <div>Sitemap</div>
+            <br />
+            <MuiThemeProvider>
+              <FlatButton label="HOME" className="btn" href='#' />
+            </MuiThemeProvider>
+            &emsp;|&emsp;
+            <MuiThemeProvider>
+              <FlatButton label="ABOUT US" className="btn" href='#whatwedo' />
+            </MuiThemeProvider>
+            &emsp;|&emsp;
+            enquiries@thebridgeproject.com.au
           </div>
 						&copy; The Bridge Project 2017   |   All rights reserved<br />
 				</div>

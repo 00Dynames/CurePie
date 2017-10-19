@@ -155,7 +155,7 @@ class Summary extends Component {
             <MuiThemeProvider>
               <RaisedButton
                   className="btn"
-                  label="Favourite"
+                  label="Bookmark"
                   onClick={this.handleOpen}
               />
              </MuiThemeProvider>
@@ -173,7 +173,7 @@ class Summary extends Component {
                  open={this.state.open}
                  onRequestClose={this.handleClose}
                >
-                 Favourite Added!
+                 Bookmark Added!
                </Dialog>
              </MuiThemeProvider>
            </div>
@@ -273,26 +273,6 @@ class Charities extends Component {
     }
 }
 
-class Footer extends Component {
-	render() {
-		return (
-			<div>
-				<div className="green-line"></div>
-				<div id='footer-container' className='font3	'>
-          <div id='footer-links'>
-            <div onClick={this.props.switchToHome}>Home</div>
-            |
-            <div>About us</div>
-            |
-            <div>Sitemap</div>
-          </div>
-						&copy; The Bridge Project 2017   |   All rights reserved<br />
-				</div>
-			</div>
-		);
-	}
-}
-
 class EventDetails extends Component {
 
     render() {
@@ -303,7 +283,6 @@ class EventDetails extends Component {
                 <Popup name={this.props.event.name} />
                 <Help_Popup />
                 <Info loggedIn={this.props.loggedIn} event={this.props.event} />
-                <Footer />
             </div>
         )
     }

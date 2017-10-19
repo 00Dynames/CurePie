@@ -121,7 +121,7 @@ class AppBarExampleIconButton extends Component {
       >
         <h3>Logged In As: {this.props.user}</h3>
         <MenuItem onClick={this.clickRecentViewed}>Recently Viewed Events</MenuItem>
-        <MenuItem onClick={this.clickFavEvents}>Favourite Events</MenuItem>
+        <MenuItem onClick={this.clickFavEvents}>Bookmarked Events</MenuItem>
         <MenuItem onClick={this.clickSettings}>Settings</MenuItem>
       </Drawer>
     }
