@@ -17,6 +17,7 @@ const styles = {
   heading: {
     textAlign: "center"
   },
+
 };
 
 const muiTheme = getMuiTheme({
@@ -55,10 +56,10 @@ class Settings extends Component {
     ];
 
     return (
-      <div>
+      <div className="location">
         <MuiThemeProvider muiTheme={muiTheme}>
           <div style={styles.heading}>
-            <h2 style={styles.headline}>Change Password</h2>
+            <h2 className="font1" style={styles.headline}>Change Password</h2>
             <TextField hintText="Password" type="password"/> <br/>
             <TextField hintText="Confirm Password" type="password"/>
             <br/>

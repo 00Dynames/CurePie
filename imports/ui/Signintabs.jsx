@@ -35,8 +35,8 @@ const Signintabs = (func) => (
   <MuiThemeProvider muiTheme={muiTheme}>
     <Tabs>
       <Tab label="Sign-In" >
-        <div style={styles.signin}>
-          <h2 style={styles.headline}>Sign-In</h2>
+        <div className="location" style={styles.signin}>
+          <h2 className="font1" style={styles.headline}>Sign-In</h2>
           <TextField hintText="Username"/>
           <br/>
           <TextField hintText="Password" type="password"/>
@@ -46,8 +46,8 @@ const Signintabs = (func) => (
         </div>
       </Tab>
       <Tab label="Register" >
-        <div style={styles.signin}>
-          <h2 style={styles.headline}>Register</h2>
+        <div className="location" style={styles.signin}>
+          <h2 className="font1" style={styles.headline}>Register</h2>
           <TextField hintText="Username"/>
           <br/>
           <TextField hintText="Password" type="password"/>
