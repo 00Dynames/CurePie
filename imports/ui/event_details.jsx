@@ -5,6 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Dialog from 'material-ui/Dialog';
 import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
+import Paper from 'material-ui/Paper';
 import {
     Table,
     TableBody,
@@ -30,7 +31,7 @@ class Popup extends Component {
         return (
             <div className="event-description">
                 <div className="main-title">{this.props.name}</div>
-                <br></br>
+								<br />
                 <MuiThemeProvider>
                     <Divider />
                 </MuiThemeProvider>
@@ -68,11 +69,11 @@ class Info extends Popup {
     getNewsArticles = () => {
         result = [];
         for(i = 0; i < this.props.event.news.length; i++){
-            result.push(<li><a href={this.props.event.news[i]}>{this.props.event.news[i]}</a></li>)
+            result.push(<li><a href={this.props.event.news[i]}  target="_blank">{this.props.event.news[i]}</a></li>)
         }
         return result;
     }
-    
+
     getNews = (topic) => {
         subscription = Meteor.subscribe("getNews");
         Session.setDefault('news', []);
@@ -96,8 +97,10 @@ class Info extends Popup {
 
     render(){
         return (
-            <div id='details-container'>
-                <div className="panel-container">
+            <div id='details-container' className='font2'>
+							<div className='panel-container'>
+							<MuiThemeProvider>
+								<Paper style={ {width:300, height:550, position:'absolute', left:40}} zDepth={3}>
                     <div className="panel-image"></div>
                     <Summary
                         date={this.props.event.date}
@@ -105,7 +108,9 @@ class Info extends Popup {
                         affected={this.props.event.affected}
                         type={this.props.event.type}
                     />
-                </div>
+								</Paper>
+								</MuiThemeProvider>
+								</div>
                 <div className="info-block">
                     <div className="info-heading">What's happening</div>
                     <p>
@@ -129,24 +134,24 @@ class Summary extends Component {
         return (
             <table id='summary-table'>
                 <tr>
-                    <h1>Date: </h1>
-                    <td>{this.props.date}</td>
+                    <td className='summary-field'>Date:</td>
+                    <td className='summary-value'>{this.props.date}</td>
                 </tr>
                 <tr>
-                    <h1>Location: </h1>
-                    <td>{this.props.location}</td>
+                    <td className='summary-field'>Location: </td>
+                    <td className='summary-value'>{this.props.location}</td>
                 </tr>
                 <tr>
-                    <h1>Category: </h1>
-                    <td>{this.props.type}</td>
+                    <td className='summary-field'>Category: </td>
+                    <td className='summary-value'>{this.props.type}</td>
                 </tr>
                 <tr>
-                    <h1>Population Affected:</h1>
-                    <td>{this.props.affected}</td>
+                    <td className='summary-field'>Population Affected:</td>
+                    <td className='summary-value'>{this.props.affected}</td>
                 </tr>
                 <tr>
-                    <h1>Status: </h1>
-                    <td>State of Emergency, Ongoing</td>
+                    <td className='summary-field'>Status: </td>
+                    <td className='summary-value'>State of Emergency, Ongoing</td>
                 </tr>
             </table>
         )
@@ -159,7 +164,7 @@ class Charities extends Component {
         console.log(this.props.loggedIn);
         if (this.props.loggedIn){
             return (<MuiThemeProvider>
-                        <RaisedButton 
+                        <RaisedButton
                             className="btn"
                             label="Donate"
                             key={this.props.charities[i].name}
@@ -175,7 +180,7 @@ class Charities extends Component {
             return (
                 <MuiThemeProvider>
                     <DonationDialogue name={this.props.name} />
-                </MuiThemeProvider>   
+                </MuiThemeProvider>
                 );
         }
     }
@@ -198,9 +203,9 @@ class Charities extends Component {
 
 
     render() {
-    
-        donateTitle = (this.props.loggedIn) ? <th></th> : "";       
-    
+
+        donateTitle = (this.props.loggedIn) ? <th></th> : "";
+
         return (
             <div className="Charities-block">
                 <div className="info-heading">Charities Currently Involved</div>

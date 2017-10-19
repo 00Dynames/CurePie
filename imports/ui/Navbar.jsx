@@ -110,7 +110,7 @@ class AppBarExampleIconButton extends Component {
         open={this.state.open}
         onRequestChange={(open) => this.setState({open})}
       >
-        <h1>Logged In As: GUEST</h1>
+        <h3>Logged In As: GUEST</h3>
         <MenuItem onClick={this.clickLogin}>Login</MenuItem>
       </Drawer>
     } else {
@@ -120,7 +120,7 @@ class AppBarExampleIconButton extends Component {
         open={this.state.open}
         onRequestChange={(open) => this.setState({open})}
       >
-        <h1>Logged In As: {this.props.user}</h1>
+        <h3>Logged In As: {this.props.user}</h3>
         <MenuItem onClick={this.clickRecentViewed}>Recently Viewed Events</MenuItem>
         <MenuItem onClick={this.clickFavEvents}>Favourite Events</MenuItem>
         <MenuItem onClick={this.clickSettings}>Settings</MenuItem>

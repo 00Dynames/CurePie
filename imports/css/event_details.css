@@ -1,7 +1,7 @@
 .main-title {
   font-family: 'Fjalla One';
   text-transform: uppercase;
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
   color: black;
 }
@@ -28,24 +28,32 @@
   padding-top: 3%;
   padding-bottom: 0%;
 }
-#summary-table td {
+#summary-table {
+	/*line-height:0.5em;*/
+	margin-left:20px;
+}
+.summary-value {
   font-size: 0.9em;
   color: #00897B;
-  padding-top: 0%;
-  padding-bottom: 0%;
   text-align: left;
-  font-weight: bold;
+  /*font-weight: bold;*/
+}
+.summary-field {
+	font-family: 'Fjalla One';
+	color:black;
+	text-transform: uppercase;
+	text-align:left;
+	margin-bottom:20px;
+	line-height:1.2em;
 }
 h1 {
   font-family: 'Fjalla One';
-  font-size: 1em;
   text-transform: uppercase;
-  font-weight: normal;
   text-align: left;
   padding-left: 10%;
   padding-right: 2%;
-  padding-bottom:10%;
 }
+
 p {
   padding-top: 0%;
   padding-left: 10%;
@@ -59,7 +67,7 @@ li {
 }
 .event-description {
   align-self: center;
-  padding: 2%;
+  padding: 1.5%;
 }
 .description {
   align-self:center;
@@ -70,27 +78,30 @@ li {
   }
 
 #details-container {
-  display: flex
+  display: flex;
+	justify-content:center;
+	align-items:center;
+	margin-bottom:50px;
 }
 .panel-container {
-  width: 370px;
-  margin: 25px;
-  background-color: #dddddd;
+  /*width: 300px;*/
+  /*margin: 25px;*/
+  /*background-color: #dddddd;*/
+	align-self:flex-start;
 }
 .panel-image {
-  width: 250px;
-  height:190px;
-  background-image: url('/images/open_screen.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  top: 10px;
-  left: 32px;
+  width: 280px;
+  height: 280px;
+  background-image: url('/images/questionMark.png');
+	background-size:cover;
   margin: 10px;
 }
 .info-block {
-  width: 70%;
-  padding-bottom: 5%;
+	/*margin-left:50px;*/
+	position:relative;
+	right:0;
+  width: calc(100vw - 650px);
+  /*margin-bottom: 5%;*/
 }
 .popup-container {
   padding: 0%;
