@@ -143,7 +143,14 @@ class Footer extends Component {
 			<div>
 				<div className="green-line"></div>
 				<div id='footer-container' className='font3	'>
-					The Bridge Project (c) 2017<br />
+          <div id='footer-links'>
+            <div onClick={this.props.switchToList}>Home</div>
+            |
+            <div>About us</div>
+            |
+            <div>Sitemap</div>
+          </div>
+						&copy; The Bridge Project 2017   |   All rights reserved<br />
 				</div>
 			</div>
 		);
