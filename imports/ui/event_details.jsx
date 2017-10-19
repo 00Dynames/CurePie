@@ -72,7 +72,7 @@ class Info extends Popup {
         }
         return result;
     }
-    
+
     getNews = (topic) => {
         subscription = Meteor.subscribe("getNews");
         Session.setDefault('news', []);
@@ -159,7 +159,7 @@ class Charities extends Component {
         console.log(this.props.loggedIn);
         if (this.props.loggedIn){
             return (<MuiThemeProvider>
-                        <RaisedButton 
+                        <RaisedButton
                             className="btn"
                             label="Donate"
                             key={this.props.charities[i].name}
@@ -175,7 +175,7 @@ class Charities extends Component {
             return (
                 <MuiThemeProvider>
                     <DonationDialogue name={this.props.name} />
-                </MuiThemeProvider>   
+                </MuiThemeProvider>
                 );
         }
     }
@@ -198,9 +198,9 @@ class Charities extends Component {
 
 
     render() {
-    
-        donateTitle = (this.props.loggedIn) ? <th></th> : "";       
-    
+
+        donateTitle = (this.props.loggedIn) ? <th></th> : "";
+
         return (
             <div className="Charities-block">
                 <div className="info-heading">Charities Currently Involved</div>

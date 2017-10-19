@@ -125,11 +125,11 @@ class Team extends Component {
 					<div className="font1 headings">Meet The Team</div>
 					<div className="font1"><br></br>QT3.14</div>
 					<div id='team-container' className='font2'>
-						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Mahika Suri</div></div>
-						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Dennis Bunadi</div></div>
-						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Jacqueline Lee</div></div>
+						<div className='team-item'><img className="team-img" src='/images/mahika.jpg'/><div>Mahika Suri</div></div>
+						<div className='team-item'><img className="team-img" src='/images/dennis.jpg'/><div>Dennis Bunadi</div></div>
+						<div className='team-item'><img className="team-img" src='/images/jacqueline.jpg'/><div>Jacqueline Lee</div></div>
 						<div className='team-item'><img className="team-img" src='/images/vivian.jpg'/><div>Vivian Dang</div></div>
-						<div className='team-item'><img className="team-img" src='/images/fire.jpg'/><div>Christine Bui</div></div>
+						<div className='team-item'><img className="team-img" src='/images/christine.jpg'/><div>Christine Bui</div></div>
 					</div>
 				</div>
 			</div>
