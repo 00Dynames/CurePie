@@ -43,7 +43,7 @@ export default class Index extends Component{
           return <Settings switchToHome={this.switchToHome.bind(this)}/>
         }
 
-        return <Exp switchToMap={this.switchToMap.bind(this)} switchToList={this.switchToList.bind(this)} />;
+        return <Exp switchToMap={this.switchToMap.bind(this)} switchToList={this.switchToList.bind(this)} user={this.state.user} loggedIn={this.state.loggedIn}/>;
     }
 
     // Component switching functions

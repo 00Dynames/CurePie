@@ -100,13 +100,14 @@ class Info extends Popup {
             <div id='details-container' className='font2'>
 							<div className='panel-container'>
 							<MuiThemeProvider>
-								<Paper style={ {width:300, height:550, position:'absolute', left:40}} zDepth={3}>
+								<Paper style={ {width:300, height:580, position:'absolute', left:40}} zDepth={3}>
                     <div className="panel-image"></div>
                     <Summary
                         date={this.props.event.date}
                         location={this.props.event.location}
                         affected={this.props.event.affected}
                         type={this.props.event.type}
+                        loggedIn={this.props.loggedIn}
                     />
 								</Paper>
 								</MuiThemeProvider>
@@ -130,30 +131,80 @@ class Info extends Popup {
 
 class Summary extends Component {
 
+    constructor(props) {
+      super(props);
+      this.state = {open: false};
+    }
+
+    handleOpen = () => {
+      this.setState({open: true});
+    };
+
+    handleClose = () => {
+      this.setState({open: false});
+    };
+
+
+
     render() {
+
+      var FavButton;
+      if (this.props.loggedIn){
+        FavButton =
+          <div>
+            <MuiThemeProvider>
+              <RaisedButton
+                  className="btn"
+                  label="Favourite"
+                  onClick={this.handleOpen}
+              />
+             </MuiThemeProvider>
+             <MuiThemeProvider>
+               <Dialog
+                 title="Success"
+                 actions={
+                   <FlatButton
+                     label="OK!"
+                     primary={true}
+                     onClick={this.handleClose}
+                   />
+                 }
+                 modal={false}
+                 open={this.state.open}
+                 onRequestClose={this.handleClose}
+               >
+                 Favourite Added!.
+               </Dialog>
+             </MuiThemeProvider>
+           </div>
+        }
+
         return (
-            <table id='summary-table'>
-                <tr>
-                    <td className='summary-field'>Date:</td>
-                    <td className='summary-value'>{this.props.date}</td>
-                </tr>
-                <tr>
-                    <td className='summary-field'>Location: </td>
-                    <td className='summary-value'>{this.props.location}</td>
-                </tr>
-                <tr>
-                    <td className='summary-field'>Category: </td>
-                    <td className='summary-value'>{this.props.type}</td>
-                </tr>
-                <tr>
-                    <td className='summary-field'>Population Affected:</td>
-                    <td className='summary-value'>{this.props.affected}</td>
-                </tr>
-                <tr>
-                    <td className='summary-field'>Status: </td>
-                    <td className='summary-value'>State of Emergency, Ongoing</td>
-                </tr>
-            </table>
+            <div>
+              <table id='summary-table'>
+                  <tr>
+                      <td className='summary-field'>Date:</td>
+                      <td className='summary-value'>{this.props.date}</td>
+                  </tr>
+                  <tr>
+                      <td className='summary-field'>Location: </td>
+                      <td className='summary-value'>{this.props.location}</td>
+                  </tr>
+                  <tr>
+                      <td className='summary-field'>Category: </td>
+                      <td className='summary-value'>{this.props.type}</td>
+                  </tr>
+                  <tr>
+                      <td className='summary-field'>Population Affected:</td>
+                      <td className='summary-value'>{this.props.affected}</td>
+                  </tr>
+                  <tr>
+                      <td className='summary-field'>Status: </td>
+                      <td className='summary-value'>State of Emergency, Ongoing</td>
+                  </tr>
+              </table>
+              {FavButton}
+            </div>
         )
     }
 }

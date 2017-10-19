@@ -24,12 +24,20 @@ const styles = {
 
 class Open extends Component {
 	render() {
+
+    var name;
+    if (!this.props.user) {
+      name = "The Bridge Project"
+    } else {
+      name = "Welcome, " + this.props.user + "!"
+    }
+
 		return (
 			<div className="title-bg">
 
 					<div className="font1 headings title-text"><img src='/images/bridge1-white.png' className='title-img'></img>
 					<br></br>
-					The Bridge Project</div>
+					{name}</div>
 						<div id="search-bar-container">
 							<MuiThemeProvider>
 								<SearchBar
@@ -129,7 +137,7 @@ class Team extends Component {
 						<div className='team-item'><img className="team-img" src='/images/dennis.jpg'/><div>Dennis Bunadi</div></div>
 						<div className='team-item'><img className="team-img" src='/images/jacqueline.jpg'/><div>Jacqueline Lee</div></div>
 						<div className='team-item'><img className="team-img" src='/images/vivian.jpg'/><div>Vivian Dang</div></div>
-						<div className='team-item'><img className="team-img" src='/images/christine.jpg'/><div>Christine Bui</div></div>
+						<div className='team-item'><img className="team-img" src='/images/chris.jpg'/><div>Christine Bui</div></div>
 					</div>
 				</div>
 			</div>
@@ -160,7 +168,7 @@ class Exp extends Component {
 	render() {
 		return (
 			<div>
-				<Open switchToMap={this.props.switchToMap.bind(this)} switchToList={this.props.switchToList.bind(this)} />
+				<Open switchToMap={this.props.switchToMap.bind(this)} switchToList={this.props.switchToList.bind(this)} loggedIn={this.props.loggedIn} user={this.props.user} />
 				<SocialBar />
 				<About />
 				<Filler />
