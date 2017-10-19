@@ -137,7 +137,7 @@ class Team extends Component {
 						<div className='team-item'><img className="team-img" src='/images/dennis.jpg'/><div>Dennis Bunadi</div></div>
 						<div className='team-item'><img className="team-img" src='/images/jacqueline.jpg'/><div>Jacqueline Lee</div></div>
 						<div className='team-item'><img className="team-img" src='/images/vivian.jpg'/><div>Vivian Dang</div></div>
-						<div className='team-item'><img className="team-img" src='/images/chris.jpg'/><div>Christine Bui</div></div>
+						<div className='team-item'><img className="team-img" src='/images/christinepic.jpg'/><div>Christine Bui</div></div>
 					</div>
 				</div>
 			</div>
